@@ -1,0 +1,228 @@
+html {
+    box-sizing: border-box;
+  }
+  *,*::before,*::after {
+    box-sizing: inherit;
+  }
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+  }
+  .wave-container > svg {
+    display: block;
+  	transform-origin: bottom;
+  	animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  h1 {
+    font-size: 5rem;
+    margin: 7rem 1.25rem 2.5rem 1.25rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 0 1.25rem 5rem 1.25rem;
+  }
+
+  .wave-container {
+    position: relative;
+    background: #0099ff;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  @keyframes animateWave {
+    0% {
+      transform: scale(1,0);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
+
+  #about{
+    background: #fff;
+  }
+
+  #about{
+    display: block;
+  	transform-origin: bottom;
+  	animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards; #want this to load when i scroll to it
+  }
+
+  #projects{
+    background: linear-gradient(to bottom left,transparent 49.8%,hsl(204deg 100% 50%) 50%) top /100% 35%, linear-gradient(to top right,transparent 49.8%,hsl(152deg 100% 50%) 50%) bottom/100% 35%, linear-gradient(hsl(204deg 100% 50%),hsl(152deg 100% 50%)) center/100% 30%;
+    background-repeat: no-repeat;
+  }
+
+  #draw_surface{
+    position: absolute;
+    top: 10px;
+  }
+
+  img{
+    max-width: 50%;
+  }
+
+  video{
+    max-width: -webkit-fill-available;
+  }
+
+  h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  div .thumbnail{
+    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+    will-change: transform;
+  }
+
+  .about-text{
+    display: grid;
+    justify-content: center;
+  }
+
+  .about-text p{
+    margin: 10px 10px;
+  }
+
+  .section-title{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.3s;
+  }
+
+  .horizontal-snap {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    height: calc(180px + 1rem);
+    padding: 1rem;
+    width: 480px;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+  }
+
+  .horizontal-snap > a {
+    scroll-snap-align: center;
+  }
+
+  .horizontal-snap img {
+    width: 180px;
+    max-width: none;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+
+  #footer{
+	background-color: #325C6A;
+}
+.ftr-tle {
+    height: 50px;
+}
+.info-sec {
+    color: #fff;
+}
+.quick-info li i {
+    font-size: 8px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: left;
+}
+.social-icon li {
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 5px;
+}
+.bglight-blue {
+    background-color: #3498DB;
+}
+.bgred {
+    background-color: #E74C3C;
+}
+.bgdark-blue {
+    background-color: #2C3E50;
+}
+.bglight-blue {
+    background-color: #3498DB;
+}
+.bg-dark{
+  background-color: black;
+}
+.top-footer {
+    padding: 40px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-line {
+    padding: 30px 0px;
+    color: #fff;
+}
+
+.footer-line a {
+    color: #0CB8B6;
+}
+
+.quick-info li a{
+    color: #fff;
+}
+.site-link, .site-link:hover, .site-link:focus
+{
+    color: #0cb8b6;
+    text-transform: none;
+}
+
+footer li {
+  display: block;
+}
+
+footer li a {
+  color: white;
+}
+
+/***************************************
+buttons
+***************************************/
+
+.liveBtn {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    to right,
+    #f5ce62,
+    #e43603,
+    #e85a19
+  );
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.liveBtn:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.liveBtn:focus {
+  outline: none;
+}
