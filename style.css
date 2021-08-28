@@ -236,6 +236,9 @@ mobile css
     display: flex;
     justify-content: center;
   }
+  img{
+    max-width: 267px;
+  }
   p{
     margin: unset;
   }
