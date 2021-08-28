@@ -226,3 +226,23 @@ buttons
 .liveBtn:focus {
   outline: none;
 }
+
+/***************************************
+mobile css
+***************************************/
+
+@media only screen and (max-width: 1000px) {
+  .about-pic{
+    display: flex;
+    justify-content: center;
+  }
+  p{
+    margin: unset;
+  }
+}
+/***************************************
+mobile css
+***************************************/
+.track{
+  opacity: 0;
+}

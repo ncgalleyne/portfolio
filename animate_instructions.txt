@@ -1,0 +1,12 @@
+* animate.css version 4.1.1 classes are of the form --> animate__{animation name} *
+
+for scroll effect, follow tutorial at https://scotch.io/tutorials/level-up-your-websites-with-animatecss
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+steps:
+
+1) in HTML set class --> track animate__animated
+2) in CSS set opacity = 0 for .track
+3) in js use scroll event to addClass({animation}) to each $('.track')
+  - opacity will automatically become visible 
