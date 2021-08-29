@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jump.js"></script>
   </head>
   <body>
     <div class="wave-container">
@@ -28,7 +29,7 @@
     <h2>About Me</h2>
     <div class="container">
       <div class="row">
-        <div class="about-pic col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <img src="images\portfolio-pic.png" loading="lazy"/>
         </div>
         <div class="col-md-6 col-sm-12">
@@ -187,6 +188,22 @@
             $(this).addClass('animate__fadeInUp');
           }
         });
+      });
+
+      // Add smooth scrolling to all links in navbar
+      $(" a, li a").on('click', function(event) {
+
+        var hash = this.hash;
+        if (hash) {
+          console.log(hash);
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function() {
+            window.location.hash = hash;
+          });
+        }
+
       });
     });
 
