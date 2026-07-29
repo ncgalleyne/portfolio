@@ -26,9 +26,34 @@
   ],
   "projects": [
     {
+      "name": "Hustle 2 Elevate",
+      "description": "An e-commerce website for my friend's clothing brand. built usig next.js. handles browsing, shopping, ordering and payment processing.",
+      "image": "",
+      "link": ""
+    },
+    {
+      "name": "Pie Budgeting",
+      "description": "A budgeting app that helps users track their expenses and income. built using react and node.js.",
+      "image": "",
+      "link": ""
+    },
+    {
+      "name": "Samson Strength",
+      "description": "A personal fitness tracking app that helps users track their workouts and progress. built using react and node.js.",
+      "image": "",
+      "link": ""
+    },
+    {
+      "name": "Family Photo Album",
+      "description": "A photo album app that helps users share photos with their family. built using react and node.js.",
+      "image": "",
+      "link": ""
+    },
+    {
       "name": "Chat RSG Bot",
       "description": "A RAG powered chatbot that ingested business policies and regulatory documents, enabling the project manger to quickly reference compliance requirements when scoping and planning work.",
-      "image": ""
+      "image": "",
+      "link": ""
     }
   ],
   "certifications": [

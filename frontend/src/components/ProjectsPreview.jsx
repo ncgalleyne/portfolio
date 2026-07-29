@@ -18,7 +18,7 @@ function ProjectCard({ project }) {
       opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
         <h3 className="text-primary text-xl font-semibold">{project.name}</h3>
         <p className="text-outline text-sm mt-1">{project.description}</p>
-        {project.bullets && (
+        {project?.bullets && (
           <ul className="mt-2 text-outline text-xs list-disc list-inside">
             {project.bullets.map((bullet, index) => (
               <li key={index}>{bullet}</li>
