@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import portfolioData from '../../portfolio_data.json';
 
 const PortfolioContext = createContext(null);
 
@@ -8,11 +9,7 @@ export function PortfolioProvider({ children }) {
 
   useEffect(() => {
     // simulate async fetch -> API call to be used later
-    setData({
-      name: 'John Doe',
-      title: 'Software Developer',
-      bio: 'Passionate developer with a love for creating amazing applications.',
-    });
+    setData(portfolioData);
     setIsLoading(false);
   }, []);
 

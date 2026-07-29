@@ -1,0 +1,49 @@
+{
+  "name": "Nathaniel Alleyne",
+  "email": "ncgalleyne@gmail.com",
+  "experience": [
+    {
+      "title": "Software Engineer II",
+      "company": "JPMorgan Chase & Co.",
+      "location": "Wilmington, DE",
+      "startDate": "April 2023",
+      "endDate": "July 2026",
+      "bullets": [
+        "Developed and maintained scalable web applications using React, Node.js, and cloud technologies.",
+        "Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "Implemented CI/CD pipelines to automate testing and deployment processes."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Georgetown University",
+      "degree": "Bachelor of Science in Computer Science",
+      "fieldOfStudy": "Computer Science",
+      "startDate": "August 2017",
+      "endDate": "May 2021"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Chat RSG Bot",
+      "description": "A RAG powered chatbot that ingested business policies and regulatory documents, enabling the project manger to quickly reference compliance requirements when scoping and planning work.",
+      "image": ""
+    }
+  ],
+  "certifications": [
+    {
+      "name": "",
+      "issuer": "",
+      "issueDate": "",
+      "expirationDate": "",
+      "credentialId": "",
+      "credentialUrl": ""
+    }
+  ],
+  "skills": {
+    "languages": ["JavaScript", "Python", "Java", "C#", "SQL"],
+    "frameworks": ["React", "Node.js", "Spring Boot", "ASP.NET"],
+    "tools": ["Git", "Docker", "Kubernetes", "AWS", "Azure"]
+  }
+}
