@@ -42,6 +42,16 @@ function ProjectCard({ project }) {
             ))}
           </ul>
         )}
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block px-4 py-2 bg-accent text-white text-sm font-medium rounded hover:bg-accent/80 transition-colors"
+          >
+            View Project
+          </a>
+        )}
       </div>
 
       {/* Always visible on mobile */}
