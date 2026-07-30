@@ -13,9 +13,7 @@ export default function Hero() {
         {/* Profile Image */}
         <div className="hero-glow rounded-full p-[2px] bg-gradient-to-br from-accent/60 to-accent/20">
           <div className="w-24 h-24 rounded-full bg-container-low overflow-hidden border-2 border-container-highest">
-            <div className="w-full h-full bg-container-high flex items-center justify-center text-outline text-2xl font-bold">
-              NA
-            </div>
+            <img src="https://res.cloudinary.com/dkdloke4m/image/upload/v1785448047/IMG_3257_cjolqz.jpg" className="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -38,7 +36,7 @@ export default function Hero() {
             View My Work
           </a>
           <a
-            href="/resume.pdf"
+            href="/Nathaniel_Alleyne_Resume_07242026.pdf"
             download
             className="px-6 py-2.5 border border-accent/40 text-accent font-semibold rounded hover:bg-accent/10 hover:scale-105 transition-all duration-200 text-sm"
           >
