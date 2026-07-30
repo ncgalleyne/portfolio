@@ -28,31 +28,31 @@
     {
       "name": "Hustle 2 Elevate",
       "description": "An e-commerce website for my friend's clothing brand. built usig next.js. handles browsing, shopping, ordering and payment processing.",
-      "image": "",
-      "link": ""
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434056/Screenshot_2026-07-29_101423_ymvb1v.png",
+      "link": "https://hustle2elevate.com/"
     },
     {
       "name": "Pie Budgeting",
       "description": "A budgeting app that helps users track their expenses and income. built using react and node.js.",
-      "image": "",
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_100650_qfifnc.png",
       "link": ""
     },
     {
       "name": "Samson Strength",
       "description": "A personal fitness tracking app that helps users track their workouts and progress. built using react and node.js.",
-      "image": "",
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_101759_rnyf8m.png",
       "link": ""
     },
     {
       "name": "Family Photo Album",
       "description": "A photo album app that helps users share photos with their family. built using react and node.js.",
-      "image": "",
-      "link": ""
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785375988/photo-album-app/lycdhea5l2wavg4wuem8.png",
+      "link": "https://family-photo-album-app.netlify.app"
     },
     {
-      "name": "Chat RSG Bot",
+      "name": "AI Concierge Bot",
       "description": "A RAG powered chatbot that ingested business policies and regulatory documents, enabling the project manger to quickly reference compliance requirements when scoping and planning work.",
-      "image": "",
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/video/upload/v1785434096/Recording_2026-07-29_131530_bbcqcc.mp4",
       "link": ""
     }
   ],
