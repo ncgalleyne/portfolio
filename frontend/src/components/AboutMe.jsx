@@ -15,23 +15,13 @@ export default function AboutMe() {
         </h2>
         <div className="flex flex-col gap-4 text-sm md:text-base text-outline leading-relaxed">
           <p>
-            I'm {data.name.split(' ')[0]} — a software engineer currently at{' '}
-            <span className="text-primary font-medium">{currentRole.company}</span>{' '}
-            where I build internal platforms, micro-frontends, and developer tooling.
+            I'm {data.name.split(' ')[0]} — a mid-to-senior level software engineer with experience building scalable, user-focused products across the frontend and full stack. While my strongest expertise lies in frontend engineering, I've spent my career delivering end-to-end solutions spanning modern web applications, backend services, and cloud infrastructure.
           </p>
           <p>
-            I enjoy working across the stack — from React component systems and
-            Module Federation architectures to Java microservices and AI-powered
-            developer tools. I care about shipping clean, maintainable software
-            that solves real problems.
+            At <span className="text-primary font-medium">{currentRole.company}</span>, I build internal platforms and scalable applications using React, Node.js, and cloud technologies, focusing on performance, maintainability, and developer experience. I enjoy solving complex problems across the stack—from designing reusable React component systems and Module Federation architectures to building Java microservices and AI-powered developer tools.
           </p>
           <p>
-            Previously at{' '}
-            <span className="text-primary font-medium">
-              {data.experience[1]?.company}
-            </span>
-            , where I built consumer lending products and led agile ceremonies
-            for a team of engineers.
+            Beyond my professional experience, I've built and launched a complete e-commerce platform for a clothing brand using Next.js, helping establish its online presence and drive product sales. Delivering a product from concept to production reinforced my passion for building software that creates measurable business impact, not just technical solutions.
           </p>
         </div>
       </div>
