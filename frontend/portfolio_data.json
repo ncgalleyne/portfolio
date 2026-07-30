@@ -39,33 +39,33 @@
   "projects": [
     {
       "name": "Hustle 2 Elevate",
-      "description": "An e-commerce website for my friend's clothing brand. built usig next.js. handles browsing, shopping, ordering and payment processing.",
+      "description": "Designed and developed a full-stack e-commerce platform for an independent clothing brand using Next.js. Features include product browsing, cart management, secure checkout, and payment processing. The platform helped establish the brand's online presence, increase visibility, and generate sales through a seamless shopping experience.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434056/Screenshot_2026-07-29_101423_ymvb1v.png",
       "link": "https://hustle2elevate.com/"
     },
     {
       "name": "Pie Budgeting",
-      "description": "A budgeting app that helps users track their expenses and income. built using react and node.js.",
+      "description": "Built a full-stack, AI-enabled personal budgeting application using React and Node.js that enables users to track income, expenses, and spending habits. Designed with simplicity and usability in mind, providing real-time insights to help users better manage their finances.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_100650_qfifnc.png",
       "link": ""
     },
     {
+      "name": "AI Concierge Bot",
+      "description": "A Retrieval-Augmented Generation (RAG) powered AI assistant that enables front-office advisors to quickly access client fee structures, financial data, and business policies through natural language queries. The solution delivers accurate, context-aware responses from internal documentation, improving efficiency when supporting client needs and reducing time spent searching for critical information.",
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/video/upload/v1785434096/Recording_2026-07-29_131530_bbcqcc.mp4",
+      "link": ""
+    },
+    {
       "name": "Samson Strength",
-      "description": "A personal fitness tracking app that helps users track their workouts and progress. built using react and node.js.",
+      "description": "A fitness tracking application using React-native and Typescript that allows users to log workouts, monitor progress, and stay consistent with their fitness goals. Focused on creating an intuitive user experience and scalable architecture for managing personal performance data.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_101759_rnyf8m.png",
       "link": ""
     },
     {
       "name": "Family Photo Album",
-      "description": "A photo album app that helps users share photos with their family. built using react and node.js.",
+      "description": "A full-stack photo sharing platform that enables families to securely upload, organize, and share memories in one place. The application emphasizes ease of use and accessibility while providing a private and centralized space for collaborative photo sharing.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785375988/photo-album-app/lycdhea5l2wavg4wuem8.png",
       "link": "https://family-photo-album-app.netlify.app"
-    },
-    {
-      "name": "AI Concierge Bot",
-      "description": "A RAG powered chatbot that ingested business policies and regulatory documents, enabling the project manger to quickly reference compliance requirements when scoping and planning work.",
-      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/video/upload/v1785434096/Recording_2026-07-29_131530_bbcqcc.mp4",
-      "link": ""
     }
   ],
   "certifications": [
@@ -79,8 +79,8 @@
     }
   ],
   "skills": {
-    "languages": ["JavaScript", "Python", "Java", "C#", "SQL"],
-    "frameworks": ["React", "Node.js", "Spring Boot", "ASP.NET"],
-    "tools": ["Git", "Docker", "Kubernetes", "AWS", "Azure"]
+    "languages": ["JavaScript", "TypeScript", "Python", "Java", "SQL"],
+    "frameworks": ["React", "Node.js", "Express", "TanStack Query", "Spring Boot", "Material UI", "Tailwind CSS"],
+    "tools": ["Git", "Docker", "AWS"]
   }
 }
