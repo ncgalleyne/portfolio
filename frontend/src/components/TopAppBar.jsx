@@ -1,7 +1,7 @@
 export default function TopAppBar({ onMenuToggle }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-container-lowest/90 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+        <div className="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-14">
             <span className="text-primary font-semibold text-lg tracking-tight">
                 Nate Alleyne
             </span>

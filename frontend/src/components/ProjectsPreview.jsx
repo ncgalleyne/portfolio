@@ -62,7 +62,7 @@ export default function ProjectsPreview() {
     <section id="projects" className="px-margin-mobile md:px-margin-desktop py-stack-xl">
       {/* Header */}
       <div className="flex flex-col items-center gap-4 mb-12">
-        <h2 className="text-3xl font-bold">Projects</h2>
+        <h2 className="text-3xl text-white font-bold">Projects</h2>
         <div className="w-px h-10 bg-outline-variant" />
       </div>
 

@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#ffffff',
-        accent: '#f5c35',
+        accent: '#ff5c35',
         surface: {
           DEFAULT: '#e1e2e3',
           default: '#101415',

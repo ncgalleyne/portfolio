@@ -21,15 +21,11 @@ export default function Hero() {
 
         {/* Typography */}
         <div className="text-center flex flex-col gap-1">
-          <p className="text-outline text-sm font-medium tracking-wide uppercase">
-            Hello, I'm
-          </p>
+          <p className="text-outline text-sm font-medium tracking-wide uppercase">Hello, I'm</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
             Nate Alleyne
           </h1>
-          <p className="text-lg md:text-xl text-outline font-light">
-            Software Developer
-          </p>
+          <p className="text-lg md:text-xl text-outline font-light">Software Developer</p>
         </div>
 
         {/* CTAs */}
@@ -44,8 +40,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download
-            className="px-6 py-2.5 bg-container-high text-outline font-semibold rounded shadow-lg shadow-container-high/20
-            hover:bg-container-high/90 hover:shadow-container-high/30 transition-all duration-200 text-sm"
+            className="px-6 py-2.5 border border-accent/40 text-accent font-semibold rounded hover:bg-accent/10 hover:scale-105 transition-all duration-200 text-sm"
           >
             Download Resume
           </a>
