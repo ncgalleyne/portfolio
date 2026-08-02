@@ -5,9 +5,8 @@ import TopAppBar from './components/TopAppBar'
 import NavigationDrawer from './components/NavigationDrawer'
 import Hero from './components/Hero'
 import Expertise from './components/Expertise'
+import Experience from './components/Experience'
 import TechStackMarquee from './components/TechStackMarquee'
-import AboutMe from './components/AboutMe'
-import ProjectsPreview from './components/ProjectsPreview'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -23,9 +22,8 @@ function App() {
         <main>
           <Hero />
           <Expertise />
+          <Experience />
           <TechStackMarquee />
-          <AboutMe />
-          <ProjectsPreview />
           <Contact />
         </main>
 
