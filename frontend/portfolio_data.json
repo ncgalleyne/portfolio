@@ -8,6 +8,7 @@
       "location": "Wilmington, DE",
       "startDate": "April 2023",
       "endDate": "July 2026",
+      "description": "Built and maintained enterprise financial applications using React, Node.js, Java, and AWS, improving internal workflows for business teams and supporting scalable production systems.",
       "bullets": [
         "Developed and maintained scalable web applications using React, Node.js, and cloud technologies.",
         "Collaborated with cross-functional teams to deliver high-quality software solutions.",
@@ -41,7 +42,22 @@
       "name": "Hustle 2 Elevate",
       "description": "Designed and developed a full-stack e-commerce platform for an independent clothing brand using Next.js. Features include product browsing, cart management, secure checkout, and payment processing. The platform helped establish the brand's online presence, increase visibility, and generate sales through a seamless shopping experience.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434056/Screenshot_2026-07-29_101423_ymvb1v.png",
-      "link": "https://hustle2elevate.com/"
+      "link": "https://hustle2elevate.com/",
+      "tagline": "Production e-commerce platform helping an independent clothing brand sell online",
+      "problem": "The brand needed a professional storefront and checkout experience without relying on marketplace platforms.",
+      "solution": "Built a Next.js commerce platform with product management, cart functionality, and Stripe payments.",
+      "architecture": [
+        "Next.js App Router",
+        "Stripe integration",
+        "Cloud deployment",
+        "Responsive design system"
+      ],
+      "challenges": [
+        "Designed checkout flow optimized for mobile users",
+        "Handled payment state management",
+        "Balanced performance with rich visuals"
+      ],
+      "impact": "Launched a production storefront that enabled direct online sales."
     },
     {
       "name": "Pie Budgeting",
