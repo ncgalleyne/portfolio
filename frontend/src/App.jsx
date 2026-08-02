@@ -4,6 +4,7 @@ import { PortfolioProvider } from './context/PortfolioContext'
 import TopAppBar from './components/TopAppBar'
 import NavigationDrawer from './components/NavigationDrawer'
 import Hero from './components/Hero'
+import Expertise from './components/Expertise'
 import TechStackMarquee from './components/TechStackMarquee'
 import AboutMe from './components/AboutMe'
 import ProjectsPreview from './components/ProjectsPreview'
@@ -21,6 +22,7 @@ function App() {
 
         <main>
           <Hero />
+          <Expertise />
           <TechStackMarquee />
           <AboutMe />
           <ProjectsPreview />
