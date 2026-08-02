@@ -1,48 +1,68 @@
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop pt-14 pb-6 relative overflow-hidden"
+      className="flex flex-col items-center bg-surface px-gutter pt-32 pb-16"
     >
-      {/* Subtle radial background glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[400px] h-[400px] rounded-full bg-accent/5 blur-[80px]" />
-      </div>
+      <div className="flex flex-col items-center gap-8 max-w-prose">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="bg-surface-bright/10 text-primary-container font-label-caps border border-surface-bright/20 px-4 py-2 rounded-full"
+        >
+          AVAILABLE FOR STRATEGIC COLLABORATION
+        </motion.div>
 
-      <div className="relative z-10 flex flex-col items-center gap-5">
-        {/* Profile Image */}
-        <div className="hero-glow rounded-full p-[2px] bg-gradient-to-br from-accent/60 to-accent/20">
-          <div className="w-24 h-24 rounded-full bg-container-low overflow-hidden border-2 border-container-highest">
-            <img src="https://res.cloudinary.com/dkdloke4m/image/upload/v1785448047/IMG_3257_cjolqz.jpg" className="w-full h-full object-cover" />
-          </div>
-        </div>
-
-        {/* Typography */}
-        <div className="text-center flex flex-col gap-1">
-          <p className="text-outline text-sm font-medium tracking-wide uppercase">Hello, I'm</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
-            Nate Alleyne
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center"
+        >
+          <h1 className="font-headline-lg text-on-surface">
+            Nathaniel
           </h1>
-          <p className="text-lg md:text-xl text-outline font-light">Software Developer</p>
-        </div>
+          <h1 className="font-headline-lg text-primary-container">
+            Alleyne
+          </h1>
+        </motion.div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
+        {/* Subheadline/Bio */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="text-on-surface-variant font-body-lg leading-relaxed text-center"
+        >
+          Software Engineer building scalable web applications, AI-powered tools, and products that solve real-world problems. Currently @ <span className="text-on-surface font-semibold">JPMorgan Chase</span>.
+        </motion.p>
+
+        {/* CTA Group */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          className="flex flex-col gap-4 mt-8 w-full"
+        >
           <a
             href="#projects"
-            className="px-6 py-2.5 bg-accent text-primary font-semibold rounded shadow-lg shadow-accent/20
-            hover:bg-accent/90 hover:shadow-accent/30 transition-all duration-200 text-sm"
+            className="w-full bg-primary-container text-surface font-label-bold py-4 rounded-sm active:scale-95 hover:brightness-110 transition-all duration-200 text-center"
           >
-            View My Work
+            VIEW PROJECTS
           </a>
           <a
             href="/Nathaniel_Alleyne_Resume_07242026.pdf"
             download
-            className="px-6 py-2.5 border border-accent/40 text-accent font-semibold rounded hover:bg-accent/10 hover:scale-105 transition-all duration-200 text-sm"
+            className="w-full bg-transparent text-on-surface border border-surface-bright font-label-bold py-4 rounded-sm active:scale-95 hover:brightness-110 transition-all duration-200 text-center"
           >
-            Download Resume
+            DOWNLOAD RESUME
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
