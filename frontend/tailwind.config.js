@@ -20,59 +20,66 @@ module.exports = {
     extend: {
       colors: {
         background: "#0b1326",
-        foreground: "#dae2fd",
+        foreground: "#dbe2fd",
 
         surface: {
           DEFAULT: "#0b1326",
           dim: "#0b1326",
-          bright: "#31394d",
+          bright: "#31394e",
           tint: "#4edea3",
 
-          lowest: "#060e20",
+          lowest: "#060d20",
           low: "#131b2e",
-          DEFAULT: "#171f33",
-          high: "#222a3d",
+          container: "#171f33",
+          high: "#222a3e",
           highest: "#2d3449",
 
           variant: "#2d3449",
+          card: "#0f172a",
+          border: "#1e293b",
+        },
+
+        "on-surface": {
+          DEFAULT: "#dbe2fd",
+          variant: "#bbcac0",
         },
 
         primary: {
+          DEFAULT: "#6ffbbe",
+          foreground: "#003824",
+          container: "#4edea3",
+          "container-foreground": "#005f40",
+
+          fixed: "#6ffbbe",
+          "fixed-dim": "#4edea3",
+          "fixed-foreground": "#002114",
+          "fixed-variant": "#005236",
+
+          inverse: "#006c4a",
+        },
+
+        secondary: {
           DEFAULT: "#4edea3",
           foreground: "#003824",
-          container: "#10b981",
-          "container-foreground": "#00422b",
+          container: "#00a572",
+          "container-foreground": "#00311f",
 
           fixed: "#6ffbbe",
           "fixed-dim": "#4edea3",
           "fixed-foreground": "#002113",
           "fixed-variant": "#005236",
-
-          inverse: "#006c49",
         },
 
-        secondary: {
-          DEFAULT: "#adc6ff",
+        tertiary: {
+          DEFAULT: "#d8e2ff",
           foreground: "#002e6a",
-          container: "#0566d9",
-          "container-foreground": "#e6ecff",
+          container: "#adc6ff",
+          "container-foreground": "#004fab",
 
           fixed: "#d8e2ff",
           "fixed-dim": "#adc6ff",
           "fixed-foreground": "#001a42",
           "fixed-variant": "#004395",
-        },
-
-        tertiary: {
-          DEFAULT: "#ffb3af",
-          foreground: "#650911",
-          container: "#fc7c78",
-          "container-foreground": "#711419",
-
-          fixed: "#ffdad7",
-          "fixed-dim": "#ffb3af",
-          "fixed-foreground": "#410005",
-          "fixed-variant": "#842225",
         },
 
         error: {
@@ -88,13 +95,18 @@ module.exports = {
         },
 
         muted: {
-          DEFAULT: "#bbcabf",
+          DEFAULT: "#bbcac0",
         },
 
         inverse: {
-          surface: "#dae2fd",
-          foreground: "#283044",
-          primary: "#006c49",
+          surface: "#dbe2fd",
+          "on-surface": "#283044",
+          primary: "#006c4a",
+        },
+
+        text: {
+          "on-surface": "#dae2fd",
+          variant: "#bbcabf",
         },
       },
 
@@ -115,6 +127,15 @@ module.exports = {
 
         "headline-lg": [
           "40px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+            fontWeight: "600",
+          },
+        ],
+
+        "headline-lg-mobile": [
+          "32px",
           {
             lineHeight: "1.2",
             letterSpacing: "-0.02em",
