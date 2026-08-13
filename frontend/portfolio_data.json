@@ -38,6 +38,12 @@
   ],
   "projects": [
     {
+      "name": "Shoppy",
+      "description": "A modern e-commerce demo featuring an intelligent AI shopping assistant that helps users discover products through natural conversation.",
+      "mediaUrl": "https://res.cloudinary.com/dkdloke4m/video/upload/v1786636843/shoppy_demo_uyn0sd.mp4",
+      "link": "https://ai-shoppy.netlify.app"
+    },
+    {
       "name": "Hustle 2 Elevate",
       "description": "Designed and developed a full-stack e-commerce platform for an independent clothing brand using Next.js. Features include product browsing, cart management, secure checkout, and payment processing. The platform helped establish the brand's online presence, increase visibility, and generate sales through a seamless shopping experience.",
       "mediaUrl": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434056/Screenshot_2026-07-29_101423_ymvb1v.png",
