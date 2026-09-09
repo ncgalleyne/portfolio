@@ -104,7 +104,7 @@ export function AwardsCardBack() {
 
       <div className="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
         <p className="font-bold text-pitch">
-          Currently open to select Full-Stack, Senior Software Engineer, or Frontend Developer opportunities.
+          Currently open to Senior Level Full-Stack, Software Engineer, or Frontend Developer opportunities.
         </p>
         <p className="text-[11px]">
           Seeking high-impact teams tackling ambitious distributed interfaces, next-generation AI
@@ -123,10 +123,11 @@ export function AwardsCardBack() {
       <div className="space-y-2 pt-2 border-t border-pitch/20">
         <a
           href={profile.links.resume}
-          download
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-full block text-center bg-vintage-gold hover:bg-amber-400 text-pitch-dark font-header text-xl py-2 px-3 rounded shadow border border-pitch transition active:scale-95"
         >
-          &#128229; DOWNLOAD OFFICIAL RESUME (PDF)
+          &#128229; VIEW OFFICIAL RESUME (PDF)
         </a>
         <div className="text-[9px] text-center text-pitch/60 font-mono">
           INCLUDES REFERENCES &amp; VERIFIED PRODUCTION METRICS
