@@ -1,60 +1,62 @@
 import { usePortfolio } from '../../context/PortfolioContext';
-import { Mail, MapPin, ExternalLink } from 'lucide-react';
 import { Stat } from '../ui/Stat';
+
+const PLAYER_PORTRAIT_URL =
+  'https://lh3.googleusercontent.com/aida/AEtjO1X58y9KOC3OqBLd8VMzDyp_FS2cq1RPpUnVpIno3xIlFGpFtQDYU2TZ_PVPuYlHvGFRsNGUOIZjPlLw5OeNJ2S7KGjBy9cChBXBjE1Fo83sNoODqI8eKLQb8wf4ewoiYs_mhngau-_OND4_vn_9WVqZ8FhAkYWoCGr4xB7qUe4C4NejlVl-bF2nX2hMrPCv28L0KXcX3QhSSJY-FYqgTPEF-d9UoSf8j3aqOw8cyPPeGSzM0Vgr6fn5iEA';
 
 export function PlayerCard() {
   const { profile, stats } = usePortfolio();
   if (!profile || !stats) return null;
 
   return (
-    <div className="h-full flex flex-col p-6 font-display text-ink">
-      {/* Header */}
-      <div className="flex justify-between items-start mb-4">
+    <div className="h-full flex flex-col justify-between overflow-hidden">
+      <div className="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+        <span className="font-header text-lg text-pitch tracking-wider leading-none">
+          SOFTWARE ALL-STARS
+        </span>
+        <span className="text-[10px] font-bold bg-pitch text-vintage-gold px-1.5 py-0.5 rounded">
+          CARD #01
+        </span>
+      </div>
+
+      <div className="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-parchment-dark shadow-inner">
+        <img
+          alt={`${profile.name} vintage sports card portrait`}
+          className="w-full h-56 object-cover"
+          src={PLAYER_PORTRAIT_URL}
+        />
+        <div className="absolute top-2 right-2 bg-pitch/90 text-vintage-gold border border-vintage-gold/40 text-[9px] font-mono px-2 py-0.5 rounded backdrop-blur-sm">
+          2026 ROOKIE
+        </div>
+        <div className="absolute bottom-1 left-2 text-[9px] font-mono text-parchment-light drop-shadow-md">
+          FULL-STACK / DEV #{profile.number}
+        </div>
+      </div>
+
+      <div className="bg-pitch text-parchment-light px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
         <div>
-          <div className="text-forest text-sm font-mono mb-1">HOMEBASE / 01</div>
-          <h2 className="text-3xl font-bold leading-tight">{profile.name}</h2>
-          <p className="text-ink-soft text-lg font-body">{profile.title}</p>
+          <h3 className="font-header text-xl tracking-wider text-vintage-gold leading-none">
+            {profile.name.toUpperCase()}
+          </h3>
+          <p className="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">
+            {profile.location}
+          </p>
         </div>
-        <div className="text-right">
-          <div className="text-6xl font-bold text-forest">01</div>
-        </div>
+        <span className="text-xs font-bold text-parchment-light font-mono">
+          {profile.experience?.length || 0}+ YRS
+        </span>
       </div>
 
-      {/* Location */}
-      <div className="flex items-center gap-2 text-ink-soft text-sm font-mono mb-6">
-        <MapPin size={16} />
-        <span>{profile.location}</span>
+      <div className="grid grid-cols-4 gap-1.5 py-2">
+        <Stat label="Frontend" value={stats.frontend} />
+        <Stat label="Backend" value={stats.backend} />
+        <Stat label="Design" value={stats.design} />
+        <Stat label="Speed" value={stats.problemSolving} accent="red" />
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 gap-3 mb-6">
-        <Stat label="FRONTEND" value={stats.frontend} />
-        <Stat label="BACKEND" value={stats.backend} />
-        <Stat label="DESIGN" value={stats.design} />
-        <Stat label="PROBLEM SOLVING" value={stats.problemSolving} />
-      </div>
-
-      {/* Skills */}
-      <div className="mb-4">
-        <div className="text-xs text-ink-soft font-mono mb-2">SKILLS</div>
-        <div className="flex flex-wrap gap-2">
-          {profile.skills.slice(0, 6).map((skill, index) => (
-            <span
-              key={index}
-              className="text-xs px-2 py-1 bg-forest/10 text-forest rounded font-mono"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Metadata */}
-      <div className="mt-auto pt-4 border-t border-border">
-        <div className="flex justify-between text-xs text-ink-soft font-mono">
-          <span>PROJECTS: {profile.projects?.length || 0}</span>
-          <span>EXPERIENCE: {profile.experience?.length || 0}</span>
-        </div>
+      <div className="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+        <span>{profile.title.toUpperCase()}</span>
+        <span className="underline font-bold text-pitch">FLIP FOR SCOUTING REPORT &#8635;</span>
       </div>
     </div>
   );
@@ -65,68 +67,71 @@ export function PlayerCardBack() {
   if (!profile) return null;
 
   return (
-    <div className="h-full flex flex-col p-6 font-body text-ink">
-      {/* Header */}
-      <div className="mb-4">
-        <div className="text-forest text-sm font-mono mb-2">ABOUT</div>
-        <p className="text-sm leading-relaxed">{profile.about}</p>
+    <div className="h-full flex flex-col justify-between overflow-hidden">
+      <div className="border-b-2 border-pitch pb-2">
+        <div className="flex justify-between items-center">
+          <span className="font-header text-xl text-pitch">OFFICIAL SCOUTING REPORT</span>
+          <span className="bg-vintage-gold text-pitch font-mono font-bold text-[10px] px-1.5 rounded">
+            VERIFIED
+          </span>
+        </div>
+        <p className="text-[10px] text-pitch/70 font-mono mt-0.5">
+          PLAYER: {profile.name.toUpperCase()} &bull; POSITION: FULL-STACK PLAYMAKER
+        </p>
       </div>
 
-      {/* All Skills */}
-      <div className="mb-4">
-        <div className="text-forest text-sm font-mono mb-2">SKILLS</div>
-        <div className="grid grid-cols-2 gap-2">
-          {profile.skills.map((skill, index) => (
-            <div key={index} className="text-xs text-ink-soft flex items-center gap-2">
-              <div className="w-1 h-1 bg-forest rounded-full" />
+      <div className="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+        <p className="font-editorial text-[13px] italic border-l-2 border-vintage-gold pl-2 py-0.5 text-pitch">
+          &ldquo;An elite playmaker who dictates the tempo of web products. Masterful at
+          converting ambiguity into scalable systems.&rdquo;
+        </p>
+        <p className="text-[11px]">{profile.about}</p>
+      </div>
+
+      <div className="bg-parchment-dark p-2.5 rounded border border-pitch/30">
+        <h4 className="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider mb-1.5">
+          TACTICAL TOOLKIT
+        </h4>
+        <div className="flex flex-wrap gap-1">
+          {profile.skills.map((skill) => (
+            <span
+              key={skill}
+              className="text-[10px] bg-parchment-light text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono"
+            >
               {skill}
-            </div>
+            </span>
           ))}
         </div>
       </div>
 
-      {/* Contact */}
-      <div className="mt-auto pt-4 border-t border-border">
-        <div className="text-forest text-sm font-mono mb-3">CONTACT</div>
-        <div className="space-y-2">
+      <div className="pt-2 border-t border-pitch/20 space-y-1.5">
+        <div className="grid grid-cols-3 gap-1 text-center">
           <a
             href={`mailto:${profile.links.email}`}
-            className="flex items-center gap-2 text-sm text-ink hover:text-forest transition-colors"
+            className="bg-pitch hover:bg-pitch-light text-vintage-gold text-[11px] font-bold py-1.5 rounded transition"
           >
-            <Mail size={16} />
-            {profile.links.email}
+            HIRE / EMAIL
           </a>
           <a
             href={profile.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-ink hover:text-forest transition-colors"
+            className="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition"
           >
-            {/* <Github size={16} /> */}
-            GitHub
-            <ExternalLink size={12} />
+            GITHUB &#8599;
           </a>
           <a
             href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-ink hover:text-forest transition-colors"
+            className="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition"
           >
-            {/* <Linkedin size={16} /> */}
-            LinkedIn
-            <ExternalLink size={12} />
+            LINKEDIN &#8599;
           </a>
         </div>
-        
-        {/* Resume Download */}
-        <a
-          href={profile.links.resume}
-          download
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-forest text-white text-sm font-display rounded hover:bg-green transition-colors"
-        >
-          <ExternalLink size={16} />
-          DOWNLOAD RESUME
-        </a>
+        <div className="text-[9px] text-center text-pitch/60 font-mono">
+          PRESS SPACEBAR OR CLICK CARD TO FLIP
+        </div>
       </div>
     </div>
   );

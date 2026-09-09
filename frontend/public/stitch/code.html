@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>David Chen — 1994 Collector's Edition Portfolio</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Vintage Sports Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pitch: {
+              DEFAULT: '#194d33',
+              dark: '#0f3622',
+              light: '#236544'
+            },
+            parchment: {
+              lightest: '#faf7ee',
+              DEFAULT: '#f7f4ea',
+              dark: '#ede7d9',
+              border: '#dcd3be'
+            },
+            vintageGold: '#e5a93c',
+            vintageRed: '#c84b31',
+            vintageBlack: '#1f221f'
+          },
+          fontFamily: {
+            header: ['"Bebas Neue"', 'sans-serif'],
+            mono: ['"Space Mono"', '"Courier Prime"', 'monospace'],
+            editorial: ['"Playfair Display"', 'serif']
+          },
+          boxShadow: {
+            'card': '0 16px 36px -8px rgba(25, 45, 30, 0.28), 0 4px 12px rgba(0,0,0,0.08)',
+            'card-hover': '0 24px 48px -10px rgba(25, 45, 30, 0.4), 0 8px 16px rgba(0,0,0,0.12)',
+            'graded': 'inset 0 0 0 2px rgba(229,169,60,0.6), 0 10px 25px rgba(0,0,0,0.3)',
+            'wax': '0 20px 40px -10px rgba(15, 54, 34, 0.5), inset 0 2px 4px rgba(255,255,255,0.4)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="vintage-textures">
+    /* Subtle Halftone & Paper Grain overlay */
+    .paper-texture {
+      background-color: #f7f4ea;
+      background-image: radial-gradient(#194d33 0.65px, transparent 0.65px), radial-gradient(#194d33 0.65px, #f7f4ea 0.65px);
+      background-size: 26px 26px;
+      background-position: 0 0, 13px 13px;
+      opacity: 0.98;
+    }
+    .halftone-accent {
+      background-image: radial-gradient(currentColor 1px, transparent 1px);
+      background-size: 6px 6px;
+    }
+    .pitch-mat {
+      background-color: #e9e4d4;
+      background-image: 
+        linear-gradient(to right, rgba(25, 77, 51, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(25, 77, 51, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .foil-shimmer {
+      background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    }
+    .crimp-edge-top {
+      background: repeating-linear-gradient(90deg, #103823, #103823 6px, #194d33 6px, #194d33 12px);
+    }
+  </style>
+<style data-purpose="card-3d-transforms">
+    .perspective-container {
+      perspective: 1600px;
+    }
+    .card-flipper {
+      transition: transform 0.65s cubic-bezier(0.34, 1.3, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+    .card-flipper.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .card-face-back {
+      transform: rotateY(180deg);
+    }
+    /* Fan layout positioning */
+    .card-item {
+      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, z-index 0s 0.1s;
+      transform-origin: center bottom;
+    }
+    /* Card borders */
+    .vintage-card-border {
+      border: 6px solid #ede7d9;
+      outline: 2px solid #194d33;
+      outline-offset: -4px;
+    }
+    .vintage-double-rule {
+      border-top: 3px double #194d33;
+      border-bottom: 1px solid #194d33;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-parchment-dark text-vintageBlack font-mono min-h-screen overflow-x-hidden select-none flex flex-col justify-between">
+<!-- BEGIN: Top Bar / Header -->
+<header class="w-full border-b-2 border-pitch-dark bg-parchment-lightest px-6 py-3 flex items-center justify-between shadow-sm z-30">
+<div class="flex items-center space-x-3">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-pitch text-vintageGold font-bold text-xs shadow-inner">94</span>
+<div>
+<h1 class="font-header text-2xl tracking-wider text-pitch-dark leading-none">PREMIER DEVELOPER CARD ARCHIVE</h1>
+<p class="text-[10px] tracking-widest text-pitch-light font-mono uppercase">1994-2026 Rookie Draft Series • Silicon Valley United</p>
+</div>
+</div>
+<!-- Archival Grading Badge & Actions -->
+<div class="flex items-center space-x-4">
+<!-- Gem MT 10 Tag -->
+<div class="hidden sm:flex items-center border-2 border-vintageGold bg-parchment px-3 py-1 rounded shadow-sm">
+<span class="text-[11px] font-bold text-vintageGold mr-2 uppercase tracking-tight">Archival Grade</span>
+<span class="bg-vintageGold text-pitch-dark px-1.5 py-0.5 rounded font-header text-sm tracking-wider font-bold">GEM-MT 10</span>
+</div>
+<!-- Pack Reset & Sound Toggle -->
+<button class="flex items-center space-x-1.5 bg-parchment-dark hover:bg-parchment text-pitch-dark border border-pitch-dark/40 px-3 py-1.5 rounded text-xs font-bold transition shadow-sm active:scale-95" data-purpose="repack-action" id="repack-btn">
+<svg class="w-4 h-4 text-pitch" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>SEAL PACK</span>
+</button>
+<button class="p-1.5 rounded border border-pitch-dark/30 hover:bg-parchment text-pitch" data-purpose="toggle-sound" id="audio-toggle" title="Toggle tactile sound FX">
+<svg class="w-4 h-4" fill="none" id="audio-icon-on" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: Top Bar / Header -->
+<!-- BEGIN: Main Stage Viewport -->
+<main class="relative flex-1 pitch-mat flex items-center justify-center p-4 sm:p-8 overflow-hidden min-h-[660px]">
+<!-- Stadium Chalk Pitch Markings overlay on mat -->
+<div class="absolute inset-4 pointer-events-none border-2 border-pitch/10 rounded-2xl flex items-center justify-center">
+<div class="w-48 h-48 rounded-full border-2 border-pitch/10 flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-pitch/20"></div>
+</div>
+<div class="absolute left-0 top-1/4 bottom-1/4 w-32 border-r-2 border-y-2 border-pitch/10"></div>
+<div class="absolute right-0 top-1/4 bottom-1/4 w-32 border-l-2 border-y-2 border-pitch/10"></div>
+<div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-pitch/10"></div>
+</div>
+<!-- STATE 1: Foil Wax Pack Wrapper Modal / Center Piece -->
+<div class="relative z-40 transition-all duration-700 ease-out flex flex-col items-center" data-purpose="foil-pack-wrapper" id="wax-pack">
+<!-- Pack Physical Crimp Top -->
+<div class="w-80 sm:w-96 h-5 crimp-edge-top rounded-t-md shadow-md"></div>
+<!-- Wax Pack Main Body -->
+<div class="w-80 sm:w-96 bg-pitch-dark text-parchment-lightest p-6 shadow-wax border-x-4 border-pitch relative overflow-hidden flex flex-col justify-between items-center text-center">
+<!-- Retro Pack Sheen / Foil Gloss -->
+<div class="absolute inset-0 foil-shimmer pointer-events-none opacity-40"></div>
+<div class="absolute top-0 left-0 right-0 h-1 bg-vintageGold/70"></div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-vintageGold/70"></div>
+<!-- Upper Tag & 1994 Logo -->
+<div class="relative z-10 space-y-1">
+<div class="inline-block bg-vintageRed text-parchment-lightest text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded shadow">
+            1st Edition • Special Issue
+          </div>
+<p class="text-[11px] font-mono text-vintageGold tracking-widest uppercase">All-Star Developer Series</p>
+</div>
+<!-- Center Badge & Shield -->
+<div class="relative z-10 my-6 flex flex-col items-center">
+<div class="w-24 h-24 rounded-full border-4 border-vintageGold bg-pitch p-2 flex flex-col items-center justify-center shadow-inner relative">
+<span class="font-header text-4xl text-vintageGold leading-none tracking-normal">94</span>
+<span class="text-[9px] font-mono tracking-widest text-parchment-lightest">KICKOFF</span>
+<div class="absolute -bottom-2 bg-parchment-dark text-pitch font-bold text-[9px] px-2 py-0.5 rounded border border-pitch">
+              TECH DEVS
+            </div>
+</div>
+<h2 class="font-header text-4xl text-parchment-lightest mt-4 tracking-wider leading-none">DAVID CHEN</h2>
+<p class="font-editorial italic text-xs text-vintageGold tracking-wide mt-1">Full-Stack Lead • Silicon Valley United</p>
+<div class="w-44 h-0.5 bg-vintageGold/40 my-3"></div>
+<p class="text-[10px] font-mono text-parchment-dark max-w-[240px]">
+            CONTAINS 5 PREMIUM ENCRYPTED CARDS: ARCHITECTURE, WEBGL SIMULATORS, CV ANALYTICS &amp; DESIGN TOKENS.
+          </p>
+</div>
+<!-- Perforated Tear Strip Button -->
+<div class="relative z-10 w-full mt-2">
+<button class="group relative w-full bg-vintageGold hover:bg-amber-400 text-pitch-dark font-header text-2xl py-3 px-4 rounded shadow-lg border-2 border-dashed border-pitch-dark transition-all transform active:scale-95 flex items-center justify-center space-x-3 overflow-hidden" id="tear-pack-btn">
+<span class="relative z-10 tracking-widest">✂ TEAR &amp; OPEN PACK</span>
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+</button>
+<span class="text-[9px] text-parchment-dark/70 uppercase tracking-widest mt-2 block">Rip along perforation to reveal collection</span>
+</div>
+</div>
+<!-- Pack Physical Crimp Bottom -->
+<div class="w-80 sm:w-96 h-5 crimp-edge-top rounded-b-md shadow-md"></div>
+</div>
+<!-- STATE 2: The Collector's Desk (Cards Fan & Detailed Stage) -->
+<div class="hidden relative w-full max-w-6xl h-[620px] flex items-center justify-center perspective-container" data-purpose="cards-deck-container" id="cards-stage">
+<!-- ================= CARD 1: PLAYER 001 (DAVID CHEN / HOMEBASE) ================= -->
+<div class="card-item absolute cursor-pointer w-[330px] sm:w-[360px] h-[520px] rounded-xl shadow-card" data-index="0" id="card-0" onclick="selectCard(0)">
+<div class="card-flipper relative w-full h-full">
+<!-- FRONT FACE -->
+<div class="card-face absolute inset-0 rounded-xl paper-texture vintage-card-border p-3.5 flex flex-col justify-between overflow-hidden">
+<!-- Graded Badge Strip -->
+<div class="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+<span class="font-header text-lg text-pitch tracking-wider leading-none">SOFTWARE ALL-STARS</span>
+<span class="text-[10px] font-bold bg-pitch text-vintageGold px-1.5 py-0.5 rounded">CARD #01</span>
+</div>
+<!-- Card Portrait Photo Frame with Provided Image 2 -->
+<div class="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-parchment-dark shadow-inner group">
+<img alt="David Chen vintage sports card portrait" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X58y9KOC3OqBLd8VMzDyp_FS2cq1RPpUnVpIno3xIlFGpFtQDYU2TZ_PVPuYlHvGFRsNGUOIZjPlLw5OeNJ2S7KGjBy9cChBXBjE1Fo83sNoODqI8eKLQb8wf4ewoiYs_mhngau-_OND4_vn_9WVqZ8FhAkYWoCGr4xB7qUe4C4NejlVl-bF2nX2hMrPCv28L0KXcX3QhSSJY-FYqgTPEF-d9UoSf8j3aqOw8cyPPeGSzM0Vgr6fn5iEA"/>
+<div class="absolute top-2 right-2 bg-pitch/90 text-vintageGold border border-vintageGold/40 text-[9px] font-mono px-2 py-0.5 rounded backdrop-blur-sm">
+                1994 ROOKIE
+              </div>
+<div class="absolute bottom-1 left-2 text-[9px] font-mono text-parchment-lightest drop-shadow-md">
+                MIDFIELDER / DEV #88
+              </div>
+</div>
+<!-- Name Ribbon / Banner Banner -->
+<div class="bg-pitch text-parchment-lightest px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
+<div>
+<h3 class="font-header text-xl tracking-wider text-vintageGold leading-none">DAVID CHEN</h3>
+<p class="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">Silicon Valley United</p>
+</div>
+<span class="text-xs font-bold text-parchment-lightest font-mono">10 YRS PRO</span>
+</div>
+<!-- Attributes / Radar Stat Matrix -->
+<div class="grid grid-cols-4 gap-1.5 py-2 text-center text-pitch-dark">
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">FRONTEND</span>
+<span class="font-header text-xl text-pitch leading-none">96</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">BACKEND</span>
+<span class="font-header text-xl text-pitch leading-none">92</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">ARCH</span>
+<span class="font-header text-xl text-pitch leading-none">94</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">SPEED</span>
+<span class="font-header text-xl text-vintageRed leading-none">98</span>
+</div>
+</div>
+<!-- Footer Hint -->
+<div class="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+<span>STANFORD CS '16</span>
+<span class="underline font-bold text-pitch">FLIP FOR SCOUTING REPORT ↻</span>
+</div>
+</div>
+<!-- BACK FACE (PLAYER BIO & DOSSIER) -->
+<div class="card-face card-face-back absolute inset-0 rounded-xl paper-texture vintage-card-border p-4 flex flex-col justify-between overflow-hidden">
+<!-- Header -->
+<div class="border-b-2 border-pitch pb-2">
+<div class="flex justify-between items-center">
+<span class="font-header text-xl text-pitch">OFFICIAL SCOUTING REPORT</span>
+<span class="bg-vintageGold text-pitch font-mono font-bold text-[10px] px-1.5 rounded">VERIFIED</span>
+</div>
+<p class="text-[10px] text-pitch/70 font-mono mt-0.5">PLAYER: CHEN, DAVID • POSITION: FULL-STACK PLAYMAKER</p>
+</div>
+<!-- Dossier Bio -->
+<div class="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+<p class="font-editorial text-[13px] italic border-l-2 border-vintageGold pl-2 py-0.5 text-pitch">
+                "An elite playmaker who dictates the tempo of web products. Masterful at converting ambiguity into scalable systems."
+              </p>
+<p class="text-[11px]">
+                Senior engineering lead with 10+ years architecting web applications, distributed real-time systems, and cohesive design systems. Currently leading platform engineering at SV United.
+              </p>
+</div>
+<!-- Tech Arsenal / Scouting Tags -->
+<div class="bg-parchment-dark p-2.5 rounded border border-pitch/30">
+<h4 class="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider mb-1.5">TACTICAL TOOLKIT</h4>
+<div class="flex flex-wrap gap-1">
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">React / Next.js</span>
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">TypeScript</span>
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">Node &amp; Python</span>
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">PostgreSQL</span>
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">Canvas / WebGL</span>
+<span class="text-[10px] bg-parchment-lightest text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono">Tailwind CSS</span>
+</div>
+</div>
+<!-- Career Links & Direct Action -->
+<div class="pt-2 border-t border-pitch/20 space-y-1.5">
+<div class="grid grid-cols-3 gap-1 text-center">
+<a class="bg-pitch hover:bg-pitch-light text-vintageGold text-[11px] font-bold py-1.5 rounded transition" href="#contact">
+                  HIRE / EMAIL
+                </a>
+<a class="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition" href="https://github.com" rel="noopener noreferrer" target="_blank">
+                  GITHUB ↗
+                </a>
+<a class="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                  LINKEDIN ↗
+                </a>
+</div>
+<div class="text-[9px] text-center text-pitch/60 font-mono">
+                PRESS SPACEBAR OR CLICK CORNER TO FLIP CARD
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CARD 2: PROJECT 02 (RETRO ARCADE SIMULATOR) ================= -->
+<div class="card-item absolute cursor-pointer w-[330px] sm:w-[360px] h-[520px] rounded-xl shadow-card" data-index="1" id="card-1" onclick="selectCard(1)">
+<div class="card-flipper relative w-full h-full">
+<!-- FRONT FACE -->
+<div class="card-face absolute inset-0 rounded-xl paper-texture vintage-card-border p-3.5 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+<span class="font-header text-lg text-pitch tracking-wider leading-none">PROJECT HIGHLIGHT • 02</span>
+<span class="text-[10px] font-bold bg-pitch text-vintageGold px-1.5 py-0.5 rounded">SIMULATOR</span>
+</div>
+<!-- Visual using Provided Image 1 -->
+<div class="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-black shadow-inner">
+<img alt="Retro 16-bit arcade football game simulator and code console" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W6KG8aZ4095KQPf8GKbdNh8nRXjy5kc2aUerk-o_DXtXdTf92ATQjrpq2JiYWho--Cu9iE8ES1oXRY4kh5gVcqYQBbtJE38ev3NAqRz3hNknV8p3a_E9N0L5bNmsF-knrDvYGVADC_d9DMH23-vBcGRACLKZv0to6oLUZ1yS8dAvtzXByr5B3MIiD46THTZxW9Gre6JBUtcS48S70Mgsc2WUSsoeiWnQsNfHBBBpeyjM80vegQkhduzkI"/>
+<div class="absolute bottom-1 right-2 bg-pitch/90 text-vintageGold text-[9px] font-mono px-2 py-0.5 rounded border border-vintageGold/40">
+                CANVAS / WEBSOCKETS
+              </div>
+</div>
+<div class="bg-pitch text-parchment-lightest px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
+<div>
+<h3 class="font-header text-xl tracking-wider text-vintageGold leading-none">RETRO MATCH ENGINE</h3>
+<p class="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">Live 16-bit 2D Physics Simulator</p>
+</div>
+<span class="text-xs font-bold text-vintageRed font-mono">60 FPS</span>
+</div>
+<!-- Stats Ribbon -->
+<div class="grid grid-cols-3 gap-1.5 py-2 text-center text-pitch-dark">
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">LATENCY</span>
+<span class="font-header text-lg text-pitch leading-none">21ms</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">CONCURRENCY</span>
+<span class="font-header text-lg text-pitch leading-none">10k Ticks</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">ACCURACY</span>
+<span class="font-header text-lg text-vintageGold leading-none">99.8%</span>
+</div>
+</div>
+<div class="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+<span>STACK: HTML5 CANVAS, RUST/WASM</span>
+<span class="underline font-bold text-pitch">FLIP FOR ARCHITECTURE ↻</span>
+</div>
+</div>
+<!-- BACK FACE -->
+<div class="card-face card-face-back absolute inset-0 rounded-xl paper-texture vintage-card-border p-4 flex flex-col justify-between overflow-hidden">
+<div class="border-b-2 border-pitch pb-2">
+<div class="flex justify-between items-center">
+<span class="font-header text-xl text-pitch">MATCH ENGINE SPECS</span>
+<span class="bg-vintageGold text-pitch font-mono font-bold text-[10px] px-1.5 rounded">V.2.4</span>
+</div>
+<p class="text-[10px] text-pitch/70 font-mono mt-0.5">TOPIC: DETERMINISTIC HIGH-TICK SIMULATION</p>
+</div>
+<div class="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+<div>
+<span class="font-bold text-[11px] text-pitch block uppercase">The Objective:</span>
+<p class="text-[11px]">Recreate responsive 90s console arcade physics inside modern browsers while synchronizing game state over low-bandwidth WebSockets.</p>
+</div>
+<div>
+<span class="font-bold text-[11px] text-pitch block uppercase">Key Innovations:</span>
+<ul class="list-disc list-inside text-[11px] space-y-0.5">
+<li>Deterministic client-side ball interpolation with rollback reconciliation.</li>
+<li>Pixel-perfect sprite animation buffer utilizing custom WebGL quad shaders.</li>
+<li>Integrated developer terminal for real-time memory &amp; collision monitoring.</li>
+</ul>
+</div>
+</div>
+<div class="bg-parchment-dark p-2 rounded border border-pitch/30 text-[11px] font-mono">
+<span class="text-pitch-dark font-bold">STATUS:</span> Shipped to 120,000 active monthly retro enthusiasts with zero server desync incidents.
+            </div>
+<div class="pt-2 border-t border-pitch/20">
+<div class="grid grid-cols-2 gap-2 text-center">
+<a class="bg-pitch hover:bg-pitch-light text-vintageGold text-[11px] font-bold py-1.5 rounded transition" href="#live-demo">
+                  LAUNCH DEMO ↗
+                </a>
+<a class="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition" href="#github-repo">
+                  SOURCE CODE ↗
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CARD 3: PROJECT 03 (TACTICAL PITCH ANALYTICS) ================= -->
+<div class="card-item absolute cursor-pointer w-[330px] sm:w-[360px] h-[520px] rounded-xl shadow-card" data-index="2" id="card-2" onclick="selectCard(2)">
+<div class="card-flipper relative w-full h-full">
+<!-- FRONT FACE -->
+<div class="card-face absolute inset-0 rounded-xl paper-texture vintage-card-border p-3.5 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+<span class="font-header text-lg text-pitch tracking-wider leading-none">PROJECT HIGHLIGHT • 03</span>
+<span class="text-[10px] font-bold bg-pitch text-vintageGold px-1.5 py-0.5 rounded">AI / CV</span>
+</div>
+<!-- Visual using Provided Image 3 -->
+<div class="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-pitch-dark shadow-inner">
+<img alt="Vintage chalkboard tactical analytics with glowing neon UI overlay" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UZE2-DeZCdFTjEDpgQTsbShY9JDxvUwHXLR2RdxL2EEQ2W3MWH-9iTIWBeiC8MD39v9gzVGLANuJalky-gm_OZJWWS31VrLkyOrOWbJrzyDjwdERSsDEkj8yQuR5pb0Bv6t5b_kVA6sZiYUiq2ajj-B79uQAHotSO3Rkok6nUpnQdh98c7SEtdLHF6zzsJUyYHkqOm_ejNHgXpMdSpaksvao8vyoohYyL_vtMb7J_wm1VkTIdkTRA1kkg"/>
+<div class="absolute top-2 left-2 bg-pitch/90 text-parchment-lightest text-[9px] font-mono px-2 py-0.5 rounded border border-parchment-dark/30">
+                PYTORCH + NEXT.JS
+              </div>
+</div>
+<div class="bg-pitch text-parchment-lightest px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
+<div>
+<h3 class="font-header text-xl tracking-wider text-vintageGold leading-none">PITCH INTEL AI</h3>
+<p class="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">Chalkboard Spatial Analytics</p>
+</div>
+<span class="text-xs font-bold text-vintageGold font-mono">99.4% CV</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 py-2 text-center text-pitch-dark">
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">DETECTION</span>
+<span class="font-header text-lg text-pitch leading-none">99.4%</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">TRACKING</span>
+<span class="font-header text-lg text-pitch leading-none">22 Players</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">LATENCY</span>
+<span class="font-header text-lg text-vintageRed leading-none">&lt;45ms</span>
+</div>
+</div>
+<div class="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+<span>STACK: PYTHON, YOLOv8, REACT VIS</span>
+<span class="underline font-bold text-pitch">FLIP FOR PIPELINE ↻</span>
+</div>
+</div>
+<!-- BACK FACE -->
+<div class="card-face card-face-back absolute inset-0 rounded-xl paper-texture vintage-card-border p-4 flex flex-col justify-between overflow-hidden">
+<div class="border-b-2 border-pitch pb-2">
+<div class="flex justify-between items-center">
+<span class="font-header text-xl text-pitch">CV MODEL BLUEPRINT</span>
+<span class="bg-vintageGold text-pitch font-mono font-bold text-[10px] px-1.5 rounded">PATENTED</span>
+</div>
+<p class="text-[10px] text-pitch/70 font-mono mt-0.5">DOMAIN: MULTI-OBJECT SPATIAL TRACKING</p>
+</div>
+<div class="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+<div>
+<span class="font-bold text-[11px] text-pitch block uppercase">The Challenge:</span>
+<p class="text-[11px]">Extract automated tactical passing lines, pressing traps, and defensive shape from broadcast video streams without high-end studio sensor equipment.</p>
+</div>
+<div>
+<span class="font-bold text-[11px] text-pitch block uppercase">Implementation:</span>
+<p class="text-[11px]">Trained lightweight YOLO models to recognize jersey numbers, pitch lines, and ball trajectory. Generates interactive SVG chalkboard replays in real-time.</p>
+</div>
+</div>
+<div class="bg-parchment-dark p-2 rounded border border-pitch/30 text-[11px]">
+<span class="font-bold text-pitch block">IMPACT:</span>
+              Adopted by 14 international academy scout teams for match preparation and telemetry visualization.
+            </div>
+<div class="pt-2 border-t border-pitch/20">
+<div class="grid grid-cols-2 gap-2 text-center">
+<a class="bg-pitch hover:bg-pitch-light text-vintageGold text-[11px] font-bold py-1.5 rounded transition" href="#case-study">
+                  READ CASE STUDY ↗
+                </a>
+<a class="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition" href="#demo">
+                  INTERACTIVE APP ↗
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CARD 4: PROJECT 04 (TOUCHLINE DESIGN SYSTEM) ================= -->
+<div class="card-item absolute cursor-pointer w-[330px] sm:w-[360px] h-[520px] rounded-xl shadow-card" data-index="3" id="card-3" onclick="selectCard(3)">
+<div class="card-flipper relative w-full h-full">
+<!-- FRONT FACE -->
+<div class="card-face absolute inset-0 rounded-xl paper-texture vintage-card-border p-3.5 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+<span class="font-header text-lg text-pitch tracking-wider leading-none">PROJECT HIGHLIGHT • 04</span>
+<span class="text-[10px] font-bold bg-pitch text-vintageGold px-1.5 py-0.5 rounded">SYSTEMS</span>
+</div>
+<!-- Visual Tactical Graphic Layout -->
+<div class="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-pitch p-3 text-parchment-lightest shadow-inner flex flex-col justify-between h-64">
+<!-- Vintage Editorial Magazine Grid Inside -->
+<div class="border border-vintageGold/40 p-2 h-full flex flex-col justify-between rounded bg-pitch-dark">
+<div class="flex justify-between items-center border-b border-vintageGold/30 pb-1">
+<span class="font-header text-xl tracking-wider text-vintageGold">TOUCHLINE UI</span>
+<span class="text-[9px] font-mono bg-vintageRed px-1 rounded">v4.2.0</span>
+</div>
+<!-- Token Swatches Graphic -->
+<div class="space-y-1.5 my-1">
+<div class="text-[9px] font-mono text-vintageGold/80">CORE DESIGN TOKENS</div>
+<div class="grid grid-cols-5 gap-1">
+<div class="h-6 rounded bg-[#194d33] border border-white/20 flex items-center justify-center text-[8px]">#194D</div>
+<div class="h-6 rounded bg-[#e5a93c] text-pitch font-bold border border-white/20 flex items-center justify-center text-[8px]">#E5A9</div>
+<div class="h-6 rounded bg-[#c84b31] border border-white/20 flex items-center justify-center text-[8px]">#C84B</div>
+<div class="h-6 rounded bg-[#faf7ee] text-pitch font-bold border border-white/20 flex items-center justify-center text-[8px]">#FAF7</div>
+<div class="h-6 rounded bg-[#1f221f] border border-white/20 flex items-center justify-center text-[8px]">#1F22</div>
+</div>
+</div>
+<!-- Mini Components Preview -->
+<div class="grid grid-cols-2 gap-2 text-center text-[9px] font-mono">
+<div class="border border-dashed border-vintageGold/40 p-1 rounded bg-black/20">
+                    &lt;TacticalButton /&gt;
+                  </div>
+<div class="border border-dashed border-vintageGold/40 p-1 rounded bg-black/20">
+                    &lt;ScoreboardHUD /&gt;
+                  </div>
+</div>
+<div class="text-[9px] text-center text-vintageGold/70 font-mono">
+                  128 ACCESSIBLE TOKENS • FIGMA SYNC
+                </div>
+</div>
+</div>
+<div class="bg-pitch text-parchment-lightest px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
+<div>
+<h3 class="font-header text-xl tracking-wider text-vintageGold leading-none">TOUCHLINE DESIGN SYSTEM</h3>
+<p class="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">Enterprise React Component Arsenal</p>
+</div>
+<span class="text-xs font-bold text-vintageGold font-mono">WCAG AAA</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 py-2 text-center text-pitch-dark">
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">COMPONENTS</span>
+<span class="font-header text-lg text-pitch leading-none">120+</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">SPEED GAIN</span>
+<span class="font-header text-lg text-vintageRed leading-none">+45%</span>
+</div>
+<div class="bg-parchment-dark/70 rounded p-1 border border-pitch/20">
+<span class="text-[9px] block text-pitch-light font-mono font-bold">STORYBOOK</span>
+<span class="font-header text-lg text-pitch leading-none">100%</span>
+</div>
+</div>
+<div class="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+<span>STACK: TAILWIND, STORYBOOK, RADIX</span>
+<span class="underline font-bold text-pitch">FLIP FOR DETAILS ↻</span>
+</div>
+</div>
+<!-- BACK FACE -->
+<div class="card-face card-face-back absolute inset-0 rounded-xl paper-texture vintage-card-border p-4 flex flex-col justify-between overflow-hidden">
+<div class="border-b-2 border-pitch pb-2">
+<div class="flex justify-between items-center">
+<span class="font-header text-xl text-pitch">COMPONENT SPEC SHEET</span>
+<span class="bg-vintageGold text-pitch font-mono font-bold text-[10px] px-1.5 rounded">SYSTEM</span>
+</div>
+<p class="text-[10px] text-pitch/70 font-mono mt-0.5">MISSION: UNIFYING MULTI-BRAND ENTERPRISE UI</p>
+</div>
+<div class="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+<p class="text-[11px]">
+                Standardized design infrastructure serving 6 cross-functional squad teams and 40+ production micro-frontends.
+              </p>
+<div class="space-y-1">
+<span class="font-bold text-[11px] text-pitch block uppercase">Key Architectural Highlights:</span>
+<ul class="list-disc list-inside text-[11px] space-y-0.5">
+<li>Zero-runtime CSS token compilation pipeline.</li>
+<li>Automated Figma-to-code token sync through GitHub Actions.</li>
+<li>Keyboard accessibility audit with 100% test coverage.</li>
+</ul>
+</div>
+</div>
+<div class="bg-parchment-dark p-2 rounded border border-pitch/30 text-[11px]">
+<span class="font-bold text-pitch block">CYCLE REDUCTION:</span>
+              Reduced new product feature engineering time from 6 weeks to 12 days.
+            </div>
+<div class="pt-2 border-t border-pitch/20">
+<div class="grid grid-cols-2 gap-2 text-center">
+<a class="bg-pitch hover:bg-pitch-light text-vintageGold text-[11px] font-bold py-1.5 rounded transition" href="#storybook">
+                  STORYBOOK ↗
+                </a>
+<a class="bg-parchment-dark hover:bg-parchment text-pitch border border-pitch text-[11px] font-bold py-1.5 rounded transition" href="#tokens">
+                  DESIGN TOKENS ↗
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CARD 5: CAREER STATS & DRAFT RECORD ================= -->
+<div class="card-item absolute cursor-pointer w-[330px] sm:w-[360px] h-[520px] rounded-xl shadow-card" data-index="4" id="card-4" onclick="selectCard(4)">
+<div class="card-flipper relative w-full h-full">
+<!-- FRONT FACE (CLASSIC BACK-OF-THE-BOX STATS CARD) -->
+<div class="card-face absolute inset-0 rounded-xl paper-texture vintage-card-border p-3.5 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between pb-1.5 border-b border-pitch/30">
+<span class="font-header text-lg text-pitch tracking-wider leading-none">ALL-TIME SEASON RECORDS</span>
+<span class="text-[10px] font-bold bg-pitch text-vintageGold px-1.5 py-0.5 rounded">RECORD #05</span>
+</div>
+<!-- Stats Box / Seasons Table -->
+<div class="my-1 flex-1 flex flex-col justify-start">
+<div class="bg-parchment-dark border border-pitch/30 rounded overflow-hidden">
+<table class="w-full text-left border-collapse text-[10px] font-mono">
+<thead>
+<tr class="bg-pitch text-parchment-lightest border-b border-pitch">
+<th class="p-1">SEASON</th>
+<th class="p-1">CLUB / TEAM</th>
+<th class="p-1 text-center">COMMITS</th>
+<th class="p-1 text-right">UPTIME</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-pitch/15">
+<tr>
+<td class="p-1 font-bold">2022-26</td>
+<td class="p-1">SV United (Staff Lead)</td>
+<td class="p-1 text-center">1,840</td>
+<td class="p-1 text-right text-pitch font-bold">99.99%</td>
+</tr>
+<tr>
+<td class="p-1 font-bold">2019-22</td>
+<td class="p-1">Apex Labs (Sr Dev)</td>
+<td class="p-1 text-center">2,410</td>
+<td class="p-1 text-right text-pitch font-bold">99.95%</td>
+</tr>
+<tr>
+<td class="p-1 font-bold">2017-19</td>
+<td class="p-1">Grid Systems (Full-Stack)</td>
+<td class="p-1 text-center">1,204</td>
+<td class="p-1 text-right text-pitch font-bold">99.90%</td>
+</tr>
+<tr>
+<td class="p-1 font-bold">2016-17</td>
+<td class="p-1">Draft Rookie (Stanford)</td>
+<td class="p-1 text-center">850</td>
+<td class="p-1 text-right text-pitch font-bold">99.80%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Honors & Trophies -->
+<div class="mt-3 space-y-1">
+<span class="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider block">HONORS &amp; TROPHIES</span>
+<div class="space-y-1 text-[10px]">
+<div class="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
+<span class="font-bold">🏆 MVP Web Architect of the Year</span>
+<span class="text-pitch-light">2024</span>
+</div>
+<div class="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
+<span class="font-bold">🎖️ Hackathon Golden Boot (1st Place)</span>
+<span class="text-pitch-light">2022</span>
+</div>
+<div class="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
+<span class="font-bold">🎓 Stanford Univ. CS Honors Citation</span>
+<span class="text-pitch-light">2016</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-pitch text-parchment-lightest px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
+<div>
+<h3 class="font-header text-xl tracking-wider text-vintageGold leading-none">CAREER LEDGER</h3>
+<p class="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">Total Career Impact</p>
+</div>
+<span class="text-xs font-bold text-vintageGold font-mono">10+ YEARS</span>
+</div>
+<div class="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
+<span>OFFICIAL LEAGUE RECORD</span>
+<span class="underline font-bold text-pitch">FLIP FOR RESUME CTA ↻</span>
+</div>
+</div>
+<!-- BACK FACE (DOWNLOAD RESUME / CONNECT) -->
+<div class="card-face card-face-back absolute inset-0 rounded-xl paper-texture vintage-card-border p-4 flex flex-col justify-between overflow-hidden">
+<div class="border-b-2 border-pitch pb-2">
+<div class="flex justify-between items-center">
+<span class="font-header text-xl text-pitch">ROSTER AVAILABILITY</span>
+<span class="bg-vintageRed text-parchment-lightest font-mono font-bold text-[10px] px-1.5 rounded">OPEN FOR 2026</span>
+</div>
+<p class="text-[10px] text-pitch/70 font-mono mt-0.5">STATUS: PRINCIPAL / LEAD ROLES</p>
+</div>
+<div class="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
+<p class="font-bold text-pitch">
+                Currently open to select Advisory, Principal Engineering, or Technical Lead opportunities.
+              </p>
+<p class="text-[11px]">
+                Seeking high-impact teams tackling ambitious distributed interfaces, next-generation AI developer tools, and creative technology.
+              </p>
+<div class="bg-parchment-dark p-2.5 rounded border border-pitch/30">
+<div class="text-[10px] font-bold text-pitch font-mono">DIRECT SCOUTING HOTLINE:</div>
+<div class="text-xs font-mono select-all text-vintageRed mt-0.5">david.chen.dev@example.com</div>
+</div>
+</div>
+<!-- Prominent Download CTA -->
+<div class="space-y-2 pt-2 border-t border-pitch/20">
+<a class="w-full block text-center bg-vintageGold hover:bg-amber-400 text-pitch-dark font-header text-xl py-2 px-3 rounded shadow border border-pitch transition active:scale-95" href="#download-resume">
+                📥 DOWNLOAD OFFICIAL RESUME (PDF)
+              </a>
+<div class="text-[9px] text-center text-pitch/60 font-mono">
+                INCLUDES REFERENCES &amp; VERIFIED PRODUCTION METRICS
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: Main Stage Viewport -->
+<!-- BEGIN: Bottom Collector Controls & Vintage Ribbon Footer -->
+<footer class="w-full bg-parchment-lightest border-t-2 border-pitch-dark px-4 py-3 z-30 shadow-md">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+<!-- Left: Navigation Arrows & Index -->
+<div class="flex items-center space-x-3">
+<button class="px-3 py-1 bg-parchment-dark hover:bg-parchment border border-pitch-dark text-pitch font-header text-lg rounded shadow-sm transition active:scale-95" id="prev-card">
+          ← PREV CARD
+        </button>
+<span class="text-xs font-mono font-bold tracking-widest text-pitch bg-pitch/10 px-2.5 py-1 rounded" id="card-counter">
+          CARD [ 01 / 05 ]
+        </span>
+<button class="px-3 py-1 bg-parchment-dark hover:bg-parchment border border-pitch-dark text-pitch font-header text-lg rounded shadow-sm transition active:scale-95" id="next-card">
+          NEXT CARD →
+        </button>
+</div>
+<!-- Center: Action Triggers (Flip & Mode) -->
+<div class="flex items-center space-x-2">
+<button class="flex items-center space-x-1.5 bg-pitch text-vintageGold hover:bg-pitch-light px-4 py-1.5 rounded text-xs font-bold shadow transition active:scale-95" id="flip-active-btn">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>FLIP CARD (SPACEBAR)</span>
+</button>
+<button class="px-3 py-1.5 bg-parchment-dark hover:bg-parchment text-pitch border border-pitch/40 text-xs font-mono font-bold rounded shadow-sm transition" id="fan-toggle-btn">
+          SPREAD DECK
+        </button>
+</div>
+<!-- Right: Fine Print Links -->
+<div class="text-[11px] font-mono text-pitch-light flex items-center space-x-3">
+<a class="hover:text-pitch underline" href="#about">SCOUTING</a>
+<span>•</span>
+<a class="hover:text-pitch underline" href="#projects">ALL CARDS</a>
+<span>•</span>
+<a class="hover:text-pitch font-bold text-vintageRed underline" href="mailto:david@example.com">CONTACT ↗</a>
+</div>
+</div>
+</footer>
+<!-- END: Bottom Collector Controls -->
+<!-- BEGIN: Interactive Trading Card Logic -->
+<script data-purpose="portfolio-deck-controller">
+    // State Variables
+    let isPackOpened = false;
+    let activeCardIndex = 0;
+    let isFannedMode = false;
+    let isSoundEnabled = true;
+    const totalCards = 5;
+
+    // DOM Elements
+    const waxPack = document.getElementById('wax-pack');
+    const cardsStage = document.getElementById('cards-stage');
+    const tearPackBtn = document.getElementById('tear-pack-btn');
+    const repackBtn = document.getElementById('repack-btn');
+    const prevBtn = document.getElementById('prev-card');
+    const nextBtn = document.getElementById('next-card');
+    const flipActiveBtn = document.getElementById('flip-active-btn');
+    const fanToggleBtn = document.getElementById('fan-toggle-btn');
+    const counterDisplay = document.getElementById('card-counter');
+    const audioToggleBtn = document.getElementById('audio-toggle');
+
+    // Simple Web Audio API Synthetic Tactical Clicks & Swishes
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+    
+    function playTactileFx(type) {
+      if (!isSoundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'tear') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.25);
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.25);
+        } else if (type === 'flip') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(520, audioCtx.currentTime + 0.12);
+          gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.12);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.12);
+        } else {
+          // Slide / Select sound
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(240, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(180, audioCtx.currentTime + 0.08);
+          gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.08);
+        }
+      } catch(e) {
+        // Fallback gracefully if audio policy restricts
+      }
+    }
+
+    // Toggle Sound Button
+    audioToggleBtn.addEventListener('click', () => {
+      isSoundEnabled = !isSoundEnabled;
+      audioToggleBtn.style.opacity = isSoundEnabled ? '1' : '0.4';
+    });
+
+    // Tear Pack Action
+    tearPackBtn.addEventListener('click', () => {
+      playTactileFx('tear');
+      waxPack.classList.add('scale-110', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        waxPack.classList.add('hidden');
+        cardsStage.classList.remove('hidden');
+        isPackOpened = true;
+        updateCardLayout();
+        playTactileFx('slide');
+      }, 450);
+    });
+
+    // Re-Pack Action
+    repackBtn.addEventListener('click', () => {
+      isPackOpened = false;
+      playTactileFx('slide');
+      // Reset flips
+      document.querySelectorAll('.card-flipper').forEach(f => f.classList.remove('flipped'));
+      cardsStage.classList.add('hidden');
+      waxPack.classList.remove('hidden');
+      setTimeout(() => {
+        waxPack.classList.remove('scale-110', 'opacity-0', 'pointer-events-none');
+      }, 50);
+    });
+
+    // Select Specific Card
+    window.selectCard = function(index) {
+      if (index === activeCardIndex) {
+        // Clicking already active card flips it!
+        flipCard(index);
+      } else {
+        activeCardIndex = index;
+        isFannedMode = false;
+        fanToggleBtn.textContent = 'SPREAD DECK';
+        playTactileFx('slide');
+        updateCardLayout();
+      }
+    };
+
+    // Flip Specified Card
+    function flipCard(index) {
+      const card = document.getElementById(`card-${index}`);
+      if (!card) return;
+      const flipper = card.querySelector('.card-flipper');
+      flipper.classList.toggle('flipped');
+      playTactileFx('flip');
+    }
+
+    // Flip Button Listener
+    flipActiveBtn.addEventListener('click', () => {
+      if (!isPackOpened) return;
+      flipCard(activeCardIndex);
+    });
+
+    // Keyboard controls (Left, Right, Space to Flip)
+    window.addEventListener('keydown', (e) => {
+      if (!isPackOpened) return;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        flipCard(activeCardIndex);
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        cycleCard(1);
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        cycleCard(-1);
+      }
+    });
+
+    // Cycle Previous / Next
+    function cycleCard(direction) {
+      activeCardIndex = (activeCardIndex + direction + totalCards) % totalCards;
+      playTactileFx('slide');
+      updateCardLayout();
+    }
+
+    prevBtn.addEventListener('click', () => cycleCard(-1));
+    nextBtn.addEventListener('click', () => cycleCard(1));
+
+    // Fan View Toggle
+    fanToggleBtn.addEventListener('click', () => {
+      isFannedMode = !isFannedMode;
+      fanToggleBtn.textContent = isFannedMode ? 'FOCUS CARD' : 'SPREAD DECK';
+      playTactileFx('slide');
+      updateCardLayout();
+    });
+
+    // Recalculate 3D Card Positions
+    function updateCardLayout() {
+      counterDisplay.textContent = `CARD [ 0${activeCardIndex + 1} / 0${totalCards} ]`;
+
+      for (let i = 0; i < totalCards; i++) {
+        const cardEl = document.getElementById(`card-${i}`);
+        if (!cardEl) continue;
+
+        if (isFannedMode) {
+          // Spread deck horizontally like an authentic card collection hand
+          const offset = i - 2;
+          const translateX = offset * 140;
+          const rotateZ = offset * 6;
+          const translateY = Math.abs(offset) * 16;
+          const zIndex = 20 + i;
+
+          cardEl.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateZ(${rotateZ}deg) scale(0.9)`;
+          cardEl.style.zIndex = zIndex;
+          cardEl.style.opacity = '1';
+        } else {
+          // Zoomed Focus on active card, with surrounding cards layered behind in vintage fan
+          const offset = i - activeCardIndex;
+
+          if (i === activeCardIndex) {
+            // Hero Focused Card
+            cardEl.style.transform = `translateX(0px) translateY(-10px) rotateZ(0deg) scale(1.08)`;
+            cardEl.style.zIndex = 40;
+            cardEl.style.opacity = '1';
+          } else {
+            // Receding Cards
+            const translateX = offset * 110;
+            const translateY = Math.abs(offset) * 12 + 10;
+            const rotateZ = offset * 4;
+            const scale = 0.88 - Math.abs(offset) * 0.05;
+            const zIndex = 30 - Math.abs(offset);
+
+            cardEl.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateZ(${rotateZ}deg) scale(${scale})`;
+            cardEl.style.zIndex = zIndex;
+            cardEl.style.opacity = Math.abs(offset) > 2 ? '0' : '0.85';
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Interactive Trading Card Logic -->
+</body></html>

@@ -1,71 +1,79 @@
-import { usePortfolio } from '../../context/PortfolioContext';
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { usePortfolio } from '../../context/PortfolioContext';
 
 export function Pack() {
-  const { profile, projects, openPack } = usePortfolio();
-  const [isMobile, setIsMobile] = useState(false);
-  const cardCount = projects.length + 2; // player card + projects + awards card
+  const { profile, cards, openPack } = usePortfolio();
+  const [isTearing, setIsTearing] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const handleTear = () => {
+    if (isTearing) return;
+    setIsTearing(true);
+    window.setTimeout(() => openPack(), 420);
+  };
+
+  const displayName = profile?.name?.toUpperCase() || 'DEVELOPER';
+  const displayTitle = profile?.title || 'Full-Stack Developer';
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
-      <motion.div
-        className="pack"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        whileHover={{ scale: isMobile ? 1.02 : 1.05, rotate: 0 }}
-        whileTap={{ scale: 0.98 }}
-        style={{
-          width: isMobile ? '280px' : '320px',
-          height: isMobile ? '392px' : '448px',
-        }}
-      >
-        <div className="pack-content">
-          <h1 className="pack-title" style={{ fontSize: isMobile ? '24px' : '32px' }}>
-            {profile?.name?.toUpperCase() || 'DEVELOPER'}
-          </h1>
-          <p className="pack-subtitle" style={{ fontSize: isMobile ? '12px' : '14px' }}>
-            DEVELOPER COLLECTION
+    <motion.div
+      className={`wax-pack z-40 w-80 sm:w-96 ${isTearing ? 'is-tearing' : ''}`}
+      initial={{ scale: 0.85, opacity: 0, y: 20 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+    >
+      <div className="wax-pack-crimp crimp-edge" />
+
+      <div className="wax-pack-body">
+        <div className="wax-pack-shimmer foil-shimmer" />
+
+        <div className="relative z-10 space-y-1 text-center">
+          <div className="inline-block bg-vintage-red text-parchment-light text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded shadow">
+            1st Edition &bull; Special Issue
+          </div>
+          <p className="text-[11px] font-mono text-vintage-gold tracking-widest uppercase">
+            All-Star Developer Series
           </p>
-          
-          <div className="pack-card-count" style={{ fontSize: isMobile ? '36px' : '48px' }}>
-            {cardCount}
-          </div>
-          <div className="pack-card-label" style={{ fontSize: isMobile ? '10px' : '12px' }}>
-            CARDS INSIDE
-          </div>
-          
-          <div className="text-xs font-mono opacity-70 mb-4" style={{ fontSize: isMobile ? '10px' : '12px' }}>
-            PROJECTS · EXPERIENCE · SKILLS
-          </div>
         </div>
 
-        <div className="pack-seal" style={{ width: isMobile ? '60px' : '80px', height: isMobile ? '60px' : '80px' }}>
-          <div className="pack-seal-text" style={{ fontSize: isMobile ? '8px' : '10px' }}>
-            2026<br/>EDITION
+        <div className="relative z-10 my-6 flex flex-col items-center">
+          <div className="wax-pack-badge">
+            <span className="wax-pack-badge-number">94</span>
+            <span className="wax-pack-badge-label">KICKOFF</span>
+            <div className="wax-pack-badge-chip">TECH DEVS</div>
           </div>
+
+          <h2 className="font-header text-3xl sm:text-4xl text-parchment-light mt-5 tracking-wider leading-none">
+            {displayName}
+          </h2>
+          <p className="font-editorial italic text-xs text-vintage-gold tracking-wide mt-1">
+            {displayTitle} &bull; Silicon Valley United
+          </p>
+          <div className="w-44 h-0.5 bg-vintage-gold/40 my-3" />
+          <p className="text-[10px] font-mono text-parchment-dark max-w-60 text-center leading-relaxed">
+            CONTAINS {cards.length} PREMIUM ENCRYPTED CARDS: PROFILE, PROJECTS &amp; CAREER RECORD.
+          </p>
         </div>
 
-        <button
-          onClick={openPack}
-          className="pack-open-button focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow"
-          style={{
-            padding: isMobile ? '12px 24px' : '16px 32px',
-            fontSize: isMobile ? '14px' : '18px',
-          }}
-          aria-label="Open card pack"
-        >
-          OPEN PACK
-        </button>
-      </motion.div>
-    </div>
+        <div className="relative z-10 w-full mt-2">
+          <button
+            type="button"
+            onClick={handleTear}
+            className="wax-pack-tear-button focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vintage-gold"
+            aria-label="Tear and open pack"
+          >
+            <span className="relative z-10 flex items-center justify-center space-x-3">
+              <span>&#9986;</span>
+              <span>TEAR &amp; OPEN PACK</span>
+            </span>
+          </button>
+          <span className="text-[9px] text-parchment-dark/70 uppercase tracking-widest mt-2 block text-center">
+            Rip along perforation to reveal collection
+          </span>
+        </div>
+      </div>
+
+      <div className="wax-pack-crimp wax-pack-crimp-bottom crimp-edge" />
+    </motion.div>
   );
 }

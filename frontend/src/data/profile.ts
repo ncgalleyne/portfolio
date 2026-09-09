@@ -19,6 +19,9 @@ interface PortfolioData {
   experience: Array<{
     title: string;
     company: string;
+    location?: string;
+    startDate?: string;
+    endDate?: string;
   }>;
   projects: Array<{
     name: string;
@@ -49,5 +52,8 @@ export const profile = {
   experience: data.experience.map((e) => ({
     title: e.title,
     company: e.company,
+    location: e.location,
+    startDate: e.startDate,
+    endDate: e.endDate,
   })),
 };

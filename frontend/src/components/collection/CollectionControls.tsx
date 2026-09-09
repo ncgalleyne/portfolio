@@ -1,63 +1,83 @@
 import { usePortfolio } from '../../context/PortfolioContext';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CardCounter } from './CardCounter';
-import { useState, useEffect } from 'react';
 
 export function CollectionControls() {
-  const { collectionState, projects, setActiveCard } = usePortfolio();
-  const { activeCardId } = collectionState;
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const allCards = [
-    { id: '01', type: 'player' },
-    ...projects.map(p => ({ id: p.id, type: 'project' as const })),
-    { id: String(projects.length + 2).padStart(2, '0'), type: 'awards' },
-  ];
-
-  const activeIndex = allCards.findIndex(card => card.id === activeCardId);
-
-  const handlePrevious = () => {
-    if (activeIndex > 0) {
-      setActiveCard(allCards[activeIndex - 1].id);
-    }
-  };
-
-  const handleNext = () => {
-    if (activeIndex < allCards.length - 1) {
-      setActiveCard(allCards[activeIndex + 1].id);
-    }
-  };
+  const { cycleCard, flipActiveCard, layoutMode, toggleLayoutMode, profile } = usePortfolio();
 
   return (
-    <div className="flex items-center justify-center gap-4 py-6 md:py-8" role="navigation" aria-label="Card collection navigation">
-      <button
-        onClick={handlePrevious}
-        disabled={activeIndex === 0}
-        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
-        aria-label="Previous card"
-        tabIndex={0}
-      >
-        <ChevronLeft size={isMobile ? 20 : 24} />
-      </button>
+    <footer
+      className="w-full bg-parchment-light border-t-2 border-pitch-dark px-4 py-3 z-30 shadow-md"
+      role="navigation"
+      aria-label="Card collection navigation"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="flex items-center space-x-3">
+          <button
+            type="button"
+            onClick={() => cycleCard(-1)}
+            className="px-3 py-1 bg-parchment-dark hover:bg-parchment border border-pitch-dark text-pitch font-header text-lg rounded shadow-sm transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-vintage-gold"
+            aria-label="Previous card"
+          >
+            &larr; PREV CARD
+          </button>
 
-      <CardCounter />
+          <CardCounter />
 
-      <button
-        onClick={handleNext}
-        disabled={activeIndex === allCards.length - 1}
-        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
-        aria-label="Next card"
-        tabIndex={0}
-      >
-        <ChevronRight size={isMobile ? 20 : 24} />
-      </button>
-    </div>
+          <button
+            type="button"
+            onClick={() => cycleCard(1)}
+            className="px-3 py-1 bg-parchment-dark hover:bg-parchment border border-pitch-dark text-pitch font-header text-lg rounded shadow-sm transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-vintage-gold"
+            aria-label="Next card"
+          >
+            NEXT CARD &rarr;
+          </button>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <button
+            type="button"
+            onClick={flipActiveCard}
+            className="flex items-center space-x-1.5 bg-pitch text-vintage-gold hover:bg-pitch-light px-4 py-1.5 rounded text-xs font-bold shadow transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-vintage-gold"
+            aria-label="Flip active card (spacebar)"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+            <span>FLIP CARD (SPACEBAR)</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={toggleLayoutMode}
+            className="px-3 py-1.5 bg-parchment-dark hover:bg-parchment text-pitch border border-pitch/40 text-xs font-mono font-bold rounded shadow-sm transition focus:outline-none focus:ring-2 focus:ring-vintage-gold"
+            aria-pressed={layoutMode === 'fanned'}
+          >
+            {layoutMode === 'fanned' ? 'FOCUS CARD' : 'SPREAD DECK'}
+          </button>
+        </div>
+
+        <div className="text-[11px] font-mono text-pitch-light flex items-center space-x-3">
+          <a className="hover:text-pitch underline" href={profile?.links.github} target="_blank" rel="noopener noreferrer">
+            GITHUB
+          </a>
+          <span>&bull;</span>
+          <a className="hover:text-pitch underline" href={profile?.links.linkedin} target="_blank" rel="noopener noreferrer">
+            LINKEDIN
+          </a>
+          <span>&bull;</span>
+          <a
+            className="hover:text-pitch font-bold text-vintage-red underline"
+            href={`mailto:${profile?.links.email}`}
+          >
+            CONTACT &#8599;
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }

@@ -1,42 +1,47 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 @import "./styles/cards.css";
 @import "./styles/textures.css";
 @import "./styles/pack.css";
 
 @theme {
-  --color-paper: #f4ebdd;
-  --color-paper-light: #f8f1e6;
-  --color-paper-dark: #e6d5bd;
+  --color-pitch: #194d33;
+  --color-pitch-dark: #0f3622;
+  --color-pitch-light: #236544;
 
-  --color-ink: #1e211b;
-  --color-ink-soft: #45463d;
+  --color-parchment: #f7f4ea;
+  --color-parchment-light: #faf7ee;
+  --color-parchment-dark: #ede7d9;
+  --color-parchment-border: #dcd3be;
 
-  --color-forest: #164a32;
-  --color-green: #246b45;
-  --color-green-light: #5f8f62;
+  --color-vintage-gold: #e5a93c;
+  --color-vintage-red: #c84b31;
+  --color-vintage-black: #1f221f;
 
-  --color-yellow: #d8b75a;
-  --color-orange: #c97945;
-  --color-red: #a64b3c;
+  --color-mat: #e9e4d4;
 
-  --color-card: #f7f0e3;
-  --color-border: #b9a98f;
+  --font-header: "Bebas Neue", "Impact", sans-serif;
+  --font-mono: "Space Mono", "Courier Prime", monospace;
+  --font-editorial: "Playfair Display", serif;
 
-  --font-display: "Barlow Condensed", sans-serif;
-  --font-body: "DM Sans", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-
-  --radius-card: 14px;
-  --radius-pack: 8px;
+  --radius-card: 12px;
+  --radius-pack: 6px;
 
   --shadow-card:
-    0 18px 40px rgba(54, 43, 29, 0.16),
-    0 4px 12px rgba(54, 43, 29, 0.1);
+    0 16px 36px -8px rgba(25, 45, 30, 0.28),
+    0 4px 12px rgba(0, 0, 0, 0.08);
 
   --shadow-card-hover:
-    0 28px 60px rgba(54, 43, 29, 0.22),
-    0 8px 20px rgba(54, 43, 29, 0.14);
+    0 24px 48px -10px rgba(25, 45, 30, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.12);
+
+  --shadow-graded:
+    inset 0 0 0 2px rgba(229, 169, 60, 0.6),
+    0 10px 25px rgba(0, 0, 0, 0.3);
+
+  --shadow-wax:
+    0 20px 40px -10px rgba(15, 54, 34, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
 
   --shadow-pack:
     0 30px 80px rgba(40, 30, 20, 0.22);
@@ -79,9 +84,11 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
-  font-family: var(--font-body);
+  background-color: var(--color-parchment-dark);
+  color: var(--color-vintage-black);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  user-select: none;
 }
 
 #root {
@@ -89,27 +96,6 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(36, 107, 69, 0.035),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(201, 121, 69, 0.035),
-      transparent 35%
-    ),
-    var(--color-paper);
+  background: var(--color-parchment-dark);
   position: relative;
-}
-
-#root::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.18;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
 }
