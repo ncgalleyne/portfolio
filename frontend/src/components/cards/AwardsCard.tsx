@@ -1,95 +1,99 @@
 import { usePortfolio } from '../../context/PortfolioContext';
 
-function formatSeason(startDate?: string, endDate?: string) {
+function formatYearRange(startDate?: string, endDate?: string) {
   if (!startDate && !endDate) return '—';
   const start = startDate?.match(/\d{4}/)?.[0] ?? '';
   const end = endDate?.toLowerCase().includes('present')
-    ? 'Now'
+    ? 'Present'
     : endDate?.match(/\d{4}/)?.[0] ?? '';
-  return end ? `${start}-${end.slice(-2)}` : start;
+  return end ? `${start} — ${end}` : start;
 }
 
 export function AwardsCard() {
-  const { profile, projects } = usePortfolio();
+  const { profile } = usePortfolio();
 
   if (!profile) return null;
 
   const experience = profile.experience || [];
+  const education = profile.education?.[0];
+  const certifications = profile.certifications || [];
 
   return (
     <div className="h-full flex flex-col justify-between overflow-hidden">
-      <div className="flex items-center justify-between pb-1.5 border-b border-pitch/30">
-        <span className="font-header text-lg text-pitch tracking-wider leading-none">
-          ALL-TIME SEASON RECORDS
-        </span>
-        <span className="text-[10px] font-bold bg-pitch text-vintage-gold px-1.5 py-0.5 rounded">
-          RECORD
-        </span>
+      {/* Header Badge & Card Metadata */}
+      <div className="flex items-start justify-between border-b-2 border-pitch/30 pb-2">
+        <div>
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#245e45] font-bold">ROSTER RECORD · #05</span>
+          <h3 className="text-xl font-black tracking-tight text-pitch uppercase font-serif">CAREER MILESTONES</h3>
+        </div>
+        <span className="px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider bg-pitch text-vintage-gold rounded uppercase">ALL-TIME</span>
       </div>
 
-      <div className="my-1 flex-1 flex flex-col justify-start">
-        <div className="bg-parchment-dark border border-pitch/30 rounded overflow-hidden">
-          <table className="w-full text-left border-collapse text-[10px] font-mono">
-            <thead>
-              <tr className="bg-pitch text-parchment-light border-b border-pitch">
-                <th className="p-1">SEASON</th>
-                <th className="p-1">CLUB / TEAM</th>
-                <th className="p-1 text-right">ROLE</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-pitch/15">
-              {experience.map((exp, i) => (
-                <tr key={`${exp.company}-${i}`}>
-                  <td className="p-1 font-bold">{formatSeason(exp.startDate, exp.endDate)}</td>
-                  <td className="p-1 truncate max-w-35">{exp.company}</td>
-                  <td className="p-1 text-right text-pitch font-bold truncate max-w-28">
-                    {exp.title.replace('Software Engineer', 'SE')}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {/* Vertical Career Timeline */}
+      <div className="py-2">
+        <div className="relative pl-6 border-l-2 border-pitch/40 space-y-5">
+          {experience.map((exp, i) => (
+            <div key={`${exp.company}-${i}`} className="relative">
+              <div className={`absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full border-2 border-[#fbf8ee] ring-2 ${
+                i === 0 ? 'bg-pitch ring-pitch' :
+                i === 1 ? 'bg-[#3d7059] ring-[#3d7059]' :
+                'bg-[#6a8779] ring-[#6a8779]'
+              }`}></div>
+              <div className="flex items-baseline justify-between">
+                <span className="text-xs font-mono font-bold text-pitch">{formatYearRange(exp.startDate, exp.endDate)}</span>
+                <span className="text-[9px] font-mono uppercase text-[#5a6e63]">
+                  {i === 0 ? 'Current Role' : i === 1 ? 'Full-Stack' : 'First Job'}
+                </span>
+              </div>
+              <p className="text-sm font-bold text-[#11241b]">{exp.title}</p>
+              <p className="text-xs text-[#2d4b3c]">{exp.company}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Awards and Trophies Section */}
+      <div className="py-2">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs font-bold font-mono tracking-wider text-pitch uppercase">★ AWARDS & TROPHIES</span>
+          <div className="h-px bg-pitch/30 grow"></div>
         </div>
 
-        <div className="mt-3 space-y-1">
-          <span className="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider block">
-            Career Ledger
-          </span>
-          <div className="space-y-1 text-[10px]">
-            <div className="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
-              <span className="font-bold">&#127942; Projects Shipped</span>
-              <span className="text-pitch-light">{projects.length}</span>
-            </div>
-            <div className="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
-              <span className="font-bold">&#127941; Career Roles</span>
-              <span className="text-pitch-light">{experience.length}</span>
-            </div>
-            <div className="flex items-center justify-between bg-parchment-dark/60 p-1 rounded border border-pitch/20">
-              <span className="font-bold">&#127891; Verified Skills</span>
-              <span className="text-pitch-light">{profile.skills.length}</span>
-            </div>
+        <ul className="space-y-1.5 text-xs font-sans text-[#1c2e24]">
+          {education && (
+            <li className="flex items-start gap-2">
+              <span className="text-[#b28228] font-bold leading-none">★</span>
+              <div>
+                <span className="font-bold">{education.degree} in {education.fieldOfStudy}</span>
+                <span className="text-[#4f6458] block text-[11px]">{education.institution} · Class Honors · Washington, D.C.</span>
+              </div>
+            </li>
+          )}
+          {certifications.map((cert, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="text-[#b28228] font-bold leading-none">★</span>
+              <div>
+                <span className="font-bold">{cert.name}</span>
+                <span className="text-[#4f6458] block text-[11px]">{cert.issuer} · {cert.issueDate}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Bottom Georgetown Alma Mater Bar */}
+      {education && (
+        <div className="pt-2 border-t border-pitch/20 flex items-center justify-between text-[11px] font-mono">
+          <div>
+            <span className="text-[#5a6e63] block text-[9px] uppercase">ALMA MATER</span>
+            <span className="font-bold text-pitch">{education.institution}</span>
+          </div>
+          <div className="text-right">
+            <span className="text-[#5a6e63] block text-[9px] uppercase">DEGREE</span>
+            <span className="font-bold text-pitch">{education.degree} {education.fieldOfStudy}</span>
           </div>
         </div>
-      </div>
-
-      <div className="bg-pitch text-parchment-light px-3 py-1.5 rounded flex items-center justify-between shadow-sm">
-        <div>
-          <h3 className="font-header text-xl tracking-wider text-vintage-gold leading-none">
-            CAREER LEDGER
-          </h3>
-          <p className="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">
-            Total Career Impact
-          </p>
-        </div>
-        <span className="text-xs font-bold text-vintage-gold font-mono">
-          {experience.length}+ ROLES
-        </span>
-      </div>
-
-      <div className="text-center pt-1 border-t border-pitch/20 flex justify-between items-center text-[9px] text-pitch/70">
-        <span>OFFICIAL LEAGUE RECORD</span>
-        <span className="underline font-bold text-pitch">FLIP FOR RESUME CTA &#8635;</span>
-      </div>
+      )}
     </div>
   );
 }

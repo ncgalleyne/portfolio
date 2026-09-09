@@ -26,6 +26,21 @@ interface PortfolioData {
   projects: Array<{
     name: string;
   }>;
+  certifications: Array<{
+    name: string;
+    issuer: string;
+    issueDate: string;
+    expirationDate: string;
+    credentialId: string;
+    credentialUrl: string;
+  }>;
+  education: Array<{
+    institution: string;
+    degree: string;
+    fieldOfStudy: string;
+    startDate: string;
+    endDate: string;
+  }>;
 }
 
 const data = portfolioData as PortfolioData;
@@ -53,6 +68,23 @@ export const profile = {
     title: e.title,
     company: e.company,
     location: e.location,
+    startDate: e.startDate,
+    endDate: e.endDate,
+  })),
+
+  certifications: data.certifications.map((c) => ({
+    name: c.name,
+    issuer: c.issuer,
+    issueDate: c.issueDate,
+    expirationDate: c.expirationDate,
+    credentialId: c.credentialId,
+    credentialUrl: c.credentialUrl,
+  })),
+
+  education: data.education.map((e) => ({
+    institution: e.institution,
+    degree: e.degree,
+    fieldOfStudy: e.fieldOfStudy,
     startDate: e.startDate,
     endDate: e.endDate,
   })),

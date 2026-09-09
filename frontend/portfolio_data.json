@@ -95,5 +95,23 @@
       "sourceUrl": ""
     }
   ],
-  "certifications": []
+  "certifications": [
+    {
+      "name": "OCI Generative AI Professional",
+      "issuer": "Oracle",
+      "issueDate": "October 2025",
+      "expirationDate": "October 2027",
+      "credentialId": "",
+      "credentialUrl": ""
+    }
+  ],
+  "education": [
+    {
+      "institution": "Georgetown University",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Computer Science",
+      "startDate": "August 2017",
+      "endDate": "May 2021"
+    }
+  ]
 }
