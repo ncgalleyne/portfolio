@@ -74,7 +74,7 @@ function computeTransform(
   const translateX = offset * 2
   const translateY = Math.abs(offset) * 12 + 10
   const rotateZ = offset * 4
-  const scale = Math.max(0.6, 0.88 - Math.abs(offset) * 0.05)
+  const scale = Math.max(0.6, 0.95 - Math.abs(offset) * 0.05)
 
   const zIndex = Math.max(1, 30 - Math.abs(offset))
 
