@@ -1,0 +1,19 @@
+.print-halftone {
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(30, 33, 27, 0.1) 1px,
+      transparent 1px
+    );
+  background-size: 6px 6px;
+}
+
+.print-grain {
+  background-image: url("/textures/paper-noise.png");
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+}
+
+.print-rule {
+  border-bottom: 1px solid rgba(22, 74, 50, 0.3);
+}
