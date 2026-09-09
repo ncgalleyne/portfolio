@@ -64,7 +64,7 @@ export function AwardsCard() {
               <span className="text-[#b28228] font-bold leading-none">★</span>
               <div>
                 <span className="font-bold">{education.degree} in {education.fieldOfStudy}</span>
-                <span className="text-[#4f6458] block text-[11px]">{education.institution} · Class Honors · Washington, D.C.</span>
+                <span className="text-[#4f6458] block text-[11px]">{education.institution} · Washington, D.C.</span>
               </div>
             </li>
           )}
