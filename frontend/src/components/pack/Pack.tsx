@@ -1,5 +1,5 @@
 import { usePortfolio } from '../../context/PortfolioContext';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 
 export function Pack() {

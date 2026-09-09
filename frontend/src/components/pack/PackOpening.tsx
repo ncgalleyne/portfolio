@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { usePortfolio } from '../../context/PortfolioContext';
 import { TradingCard } from '../cards/TradingCard';
 import { PlayerCard, PlayerCardBack } from '../cards/PlayerCard';
