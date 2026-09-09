@@ -123,11 +123,10 @@ export function AwardsCardBack() {
       <div className="space-y-2 pt-2 border-t border-pitch/20">
         <a
           href={profile.links.resume}
-          target="_blank"
-          rel="noopener noreferrer"
+          download
           className="w-full block text-center bg-vintage-gold hover:bg-amber-400 text-pitch-dark font-header text-xl py-2 px-3 rounded shadow border border-pitch transition active:scale-95"
         >
-          &#128229; VIEW OFFICIAL RESUME (PDF)
+          &#128229; DOWNLOAD OFFICIAL RESUME (PDF)
         </a>
         <div className="text-[9px] text-center text-pitch/60 font-mono">
           INCLUDES REFERENCES &amp; VERIFIED PRODUCTION METRICS
