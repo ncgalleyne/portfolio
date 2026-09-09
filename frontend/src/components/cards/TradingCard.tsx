@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { CardFrame } from './CardFrame';
 import { CardFront } from './CardFront';
 import { CardBack } from './CardBack';
@@ -46,7 +46,7 @@ export function TradingCard({ id, front, back, isActive = false, onFocus }: Trad
       className="card"
       id={id}
       onClick={handleClick}
-      onKeyDown={(e) => {
+      onKeyDown={(e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           handleClick();

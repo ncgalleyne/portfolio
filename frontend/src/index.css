@@ -59,6 +59,10 @@
     );
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   letter-spacing: 0.18px;
   color-scheme: light;
@@ -74,6 +78,10 @@
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
 }
 
 #root {
@@ -81,7 +89,6 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   background:
     radial-gradient(
       circle at 20% 20%,
