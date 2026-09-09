@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect } from 'react';
+import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { usePortfolio, type CardDescriptor } from '../../context/PortfolioContext';
 import { TradingCard } from '../cards/TradingCard';
 import { PlayerCard, PlayerCardBack } from '../cards/PlayerCard';
@@ -74,6 +74,10 @@ export function Collection() {
     collectionState,
   } = usePortfolio();
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName;
@@ -94,11 +98,44 @@ export function Collection() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [cycleCard, flipActiveCard]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    const threshold = 50;
+
+    if (Math.abs(diff) > threshold) {
+      cycleCard(diff > 0 ? 1 : -1);
+    }
+
+    setTouchStart(null);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (isScrolling) return;
+
+    const threshold = 50;
+    if (Math.abs(e.deltaX) > threshold || Math.abs(e.deltaY) > threshold) {
+      setIsScrolling(true);
+      cycleCard(e.deltaX > 0 || e.deltaY > 0 ? 1 : -1);
+      setTimeout(() => setIsScrolling(false), 300);
+    }
+  };
+
   return (
     <div
+      ref={containerRef}
       className="relative w-full max-w-6xl h-140 flex items-center justify-center perspective-container"
       role="list"
       aria-label="Trading cards"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onWheel={handleWheel}
     >
       {cards.map((card, index) => {
         const isActive = card.id === collectionState.activeCardId;
