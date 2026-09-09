@@ -1,11 +1,11 @@
 {
   "name": "Nathaniel Alleyne",
-  "title": "Developer",
+  "title": "Software Engineer",
   "location": "Philadelphia, PA",
   "email": "ncgalleyne@gmail.com",
-  "github": "https://github.com/nathanielalleyne",
-  "linkedin": "https://linkedin.com/in/nathanielalleyne",
-  "resume": "/Nathaniel_Alleyne_Resume_07242026.pdf",
+  "github": "https://github.com/ncgalleyne",
+  "linkedin": "https://www.linkedin.com/in/nathaniel-alleyne-361598170/",
+  "resume": "/Nathaniel_Alleyne_Resume_08_26_26.pdf",
   "about": "Software Engineer with experience building scalable web applications using React, Node.js, and cloud technologies. Passionate about creating intuitive user experiences and solving complex problems through elegant code solutions. Strong background in full-stack development with a focus on modern frontend technologies and cloud architecture.",
   "skills": [
     "JavaScript",
@@ -92,32 +92,6 @@
       "role": "AI/ML Engineer",
       "outcome": "Delivered accurate, context-aware responses from internal documentation, improving efficiency when supporting client needs and reducing time spent searching for critical information.",
       "liveUrl": "",
-      "sourceUrl": ""
-    },
-    {
-      "id": "06",
-      "name": "Samson Strength",
-      "category": "Mobile Application",
-      "year": "2026",
-      "description": "A fitness tracking application using React-native and Typescript that allows users to log workouts, monitor progress, and stay consistent with their fitness goals. Focused on creating an intuitive user experience.",
-      "image": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_101759_rnyf8m.png",
-      "technologies": ["React Native", "TypeScript", "Firebase", "Redux"],
-      "role": "Mobile Developer",
-      "outcome": "Built an intuitive fitness tracking app with scalable architecture for managing personal performance data.",
-      "liveUrl": "",
-      "sourceUrl": ""
-    },
-    {
-      "id": "07",
-      "name": "Family Photo Album",
-      "category": "Web Application",
-      "year": "2026",
-      "description": "A full-stack photo sharing platform that enables families to securely upload, organize, and share memories in one place. The application emphasizes ease of use and accessibility while providing a private and centralized space.",
-      "image": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785375988/photo-album-app/lycdhea5l2wavg4wuem8.png",
-      "technologies": ["React", "Node.js", "AWS S3", "PostgreSQL"],
-      "role": "Full-stack Developer",
-      "outcome": "Created a secure and user-friendly photo sharing platform that enables families to preserve and share memories together.",
-      "liveUrl": "https://family-photo-album-app.netlify.app",
       "sourceUrl": ""
     }
   ],
