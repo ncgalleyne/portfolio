@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties } from 'react';
+import { ReactNode } from 'react';
 import { CardFront } from './CardFront';
 import { CardBack } from './CardBack';
 
@@ -8,16 +8,14 @@ interface TradingCardProps {
   back: ReactNode;
   isActive: boolean;
   isFlipped: boolean;
-  style?: CSSProperties;
   onSelect: () => void;
 }
 
-export function TradingCard({ id, front, back, isActive, isFlipped, style, onSelect }: TradingCardProps) {
+export function TradingCard({ id, front, back, isActive, isFlipped, onSelect }: TradingCardProps) {
   return (
     <div
       className="card-item w-75 sm:w-85 h-125 rounded-xl"
       id={`card-${id}`}
-      style={style}
       onClick={onSelect}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -35,5 +33,5 @@ export function TradingCard({ id, front, back, isActive, isFlipped, style, onSel
         <CardBack>{back}</CardBack>
       </div>
     </div>
-  );
+  )
 }
