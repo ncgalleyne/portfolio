@@ -2,7 +2,7 @@ import { usePortfolio } from '../../context/PortfolioContext';
 import { Stat } from '../ui/Stat';
 
 const PLAYER_PORTRAIT_URL =
-  'https://lh3.googleusercontent.com/aida/AEtjO1X58y9KOC3OqBLd8VMzDyp_FS2cq1RPpUnVpIno3xIlFGpFtQDYU2TZ_PVPuYlHvGFRsNGUOIZjPlLw5OeNJ2S7KGjBy9cChBXBjE1Fo83sNoODqI8eKLQb8wf4ewoiYs_mhngau-_OND4_vn_9WVqZ8FhAkYWoCGr4xB7qUe4C4NejlVl-bF2nX2hMrPCv28L0KXcX3QhSSJY-FYqgTPEF-d9UoSf8j3aqOw8cyPPeGSzM0Vgr6fn5iEA';
+  'https://res.cloudinary.com/dkdloke4m/image/upload/v1788978271/unnamed_hizqzw.jpg';
 
 export function PlayerCard() {
   const { profile, stats } = usePortfolio();
@@ -22,14 +22,11 @@ export function PlayerCard() {
       <div className="relative my-2 rounded border-2 border-pitch-dark overflow-hidden bg-parchment-dark shadow-inner">
         <img
           alt={`${profile.name} vintage sports card portrait`}
-          className="w-full h-56 object-cover"
+          className="w-full h-56 object-contain"
           src={PLAYER_PORTRAIT_URL}
         />
         <div className="absolute top-2 right-2 bg-pitch/90 text-vintage-gold border border-vintage-gold/40 text-[9px] font-mono px-2 py-0.5 rounded backdrop-blur-sm">
-          2026 ROOKIE
-        </div>
-        <div className="absolute bottom-1 left-2 text-[9px] font-mono text-parchment-light drop-shadow-md">
-          FULL-STACK / DEV #{profile.number}
+          2021 ROOKIE
         </div>
       </div>
 
@@ -43,7 +40,7 @@ export function PlayerCard() {
           </p>
         </div>
         <span className="text-xs font-bold text-parchment-light font-mono">
-          {profile.experience?.length || 0}+ YRS
+          5+ YRS
         </span>
       </div>
 

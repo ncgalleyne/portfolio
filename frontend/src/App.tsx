@@ -11,28 +11,19 @@ function AppHeader() {
     <header className="w-full border-b-2 border-pitch-dark bg-parchment-light px-4 sm:px-6 py-3 flex items-center justify-between shadow-sm z-30">
       <div className="flex items-center space-x-3">
         <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-pitch text-vintage-gold font-bold text-xs shadow-inner">
-          94
+          '98
         </span>
         <div>
           <h1 className="font-header text-xl sm:text-2xl tracking-wider text-pitch-dark leading-none">
             PREMIER DEVELOPER CARD ARCHIVE
           </h1>
           <p className="text-[10px] tracking-widest text-pitch-light font-mono uppercase mt-0.5">
-            1994&ndash;2026 Rookie Draft Series &bull; Silicon Valley United
+            1998&ndash;2026 Rookie Draft Series &bull; Major League Hacking
           </p>
         </div>
       </div>
 
       <div className="flex items-center space-x-3">
-        <div className="hidden sm:flex items-center border-2 border-vintage-gold bg-parchment px-3 py-1 rounded shadow-sm">
-          <span className="text-[11px] font-bold text-vintage-gold mr-2 uppercase tracking-tight">
-            Archival Grade
-          </span>
-          <span className="bg-vintage-gold text-pitch-dark px-1.5 py-0.5 rounded font-header text-sm tracking-wider font-bold">
-            GEM-MT 10
-          </span>
-        </div>
-
         {appState !== 'sealed' && (
           <button
             type="button"

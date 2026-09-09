@@ -45,7 +45,7 @@
     {
       "id": "02",
       "name": "Shoppy",
-      "category": "Web Application",
+      "category": "AI/LLM",
       "year": "2026",
       "description": "A modern e-commerce demo featuring an intelligent AI shopping assistant that helps users discover products through natural conversation.",
       "image": "https://res.cloudinary.com/dkdloke4m/video/upload/v1786636843/shoppy_demo_uyn0sd.mp4",
@@ -58,7 +58,7 @@
     {
       "id": "03",
       "name": "Hustle 2 Elevate",
-      "category": "E-commerce Platform",
+      "category": "E-commerce",
       "year": "2026",
       "description": "Designed and developed a full-stack e-commerce platform for an independent clothing brand using Next.js. Features include product browsing, cart management, secure checkout, and payment processing.",
       "image": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434056/Screenshot_2026-07-29_101423_ymvb1v.png",
@@ -71,7 +71,7 @@
     {
       "id": "04",
       "name": "Pie Budgeting",
-      "category": "Web Application",
+      "category": "AI/LLM",
       "year": "2026",
       "description": "Built a full-stack, AI-enabled personal budgeting application using React and Node.js that enables users to track income, expenses, and spending habits. Designed with simplicity and usability in mind.",
       "image": "https://res.cloudinary.com/dkdloke4m/image/upload/v1785434055/Screenshot_2026-07-29_100650_qfifnc.png",
@@ -84,7 +84,7 @@
     {
       "id": "05",
       "name": "AI Concierge Bot",
-      "category": "AI Application",
+      "category": "RAG Chatbot",
       "year": "2026",
       "description": "A Retrieval-Augmented Generation (RAG) powered AI assistant that enables front-office advisors to quickly access client fee structures, financial data, and business policies through natural language queries.",
       "image": "https://res.cloudinary.com/dkdloke4m/video/upload/v1785434096/Recording_2026-07-29_131530_bbcqcc.mp4",
