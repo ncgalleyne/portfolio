@@ -1,6 +1,10 @@
-export const stats = {
-  frontend: 94,
-  backend: 88,
-  design: 91,
-  problemSolving: 97,
-};
+import portfolioData from '../../portfolio_data.json';
+
+interface Stats {
+  frontend: number;
+  backend: number;
+  design: number;
+  problemSolving: number;
+}
+
+export const stats: Stats = portfolioData.stats;

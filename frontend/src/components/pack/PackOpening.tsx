@@ -17,7 +17,7 @@ export function PackOpening() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const allCards = [
+  const allCards: Array<{ id: string; type: 'player' | 'project' | 'awards' }> = [
     { id: '01', type: 'player' },
     ...projects.map(p => ({ id: p.id, type: 'project' as const })),
     { id: String(projects.length + 2).padStart(2, '0'), type: 'awards' },

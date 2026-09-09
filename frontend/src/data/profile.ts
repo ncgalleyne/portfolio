@@ -1,42 +1,53 @@
+import portfolioData from '../../portfolio_data.json';
+
+interface PortfolioData {
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  resume: string;
+  about: string;
+  skills: string[];
+  stats: {
+    frontend: number;
+    backend: number;
+    design: number;
+    problemSolving: number;
+  };
+  experience: Array<{
+    title: string;
+    company: string;
+  }>;
+  projects: Array<{
+    name: string;
+  }>;
+}
+
+const data = portfolioData as PortfolioData;
+
 export const profile = {
-  name: "Nathaniel Alleyne",
-  title: "Developer",
-  location: "Philadelphia, PA",
+  name: data.name,
+  title: data.title,
+  location: data.location,
   number: "01",
 
-  skills: [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "Python",
-    "SQL",
-    "UI / UX",
-    "Git",
-    "Docker",
-    "AWS",
-  ],
+  skills: data.skills,
 
   links: {
-    email: "ncgalleyne@gmail.com",
-    github: "https://github.com/nathanielalleyne",
-    linkedin: "https://linkedin.com/in/nathanielalleyne",
-    resume: "/Nathaniel_Alleyne_Resume_07242026.pdf",
+    email: data.email,
+    github: data.github,
+    linkedin: data.linkedin,
+    resume: data.resume,
   },
 
-  about: "Software Engineer with experience building scalable web applications using React, Node.js, and cloud technologies. Passionate about creating intuitive user experiences and solving complex problems through elegant code solutions. Strong background in full-stack development with a focus on modern frontend technologies and cloud architecture.",
+  about: data.about,
 
-  projects: [
-    { name: "Shoppy" },
-    { name: "Hustle 2 Elevate" },
-    { name: "Pie Budgeting" },
-    { name: "AI Concierge Bot" },
-    { name: "Samson Strength" },
-    { name: "Family Photo Album" },
-  ],
+  projects: data.projects.map((p) => ({ name: p.name })),
 
-  experience: [
-    { title: "Software Engineer II", company: "JPMorgan Chase & Co." },
-    { title: "Software Engineer I", company: "Octane Lending" },
-  ],
+  experience: data.experience.map((e) => ({
+    title: e.title,
+    company: e.company,
+  })),
 };

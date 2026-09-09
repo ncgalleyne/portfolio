@@ -56,8 +56,8 @@ export function Collection() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 md:px-8 py-8 md:py-12">
-      <div className="relative mb-6 md:mb-8" style={{ width: 'fit-content' }}>
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 md:px-8 py-8 md:py-12" role="main" aria-label="Card collection">
+      <div className="relative mb-6 md:mb-8" style={{ width: 'fit-content' }} role="list" aria-label="Trading cards">
         {allCards.map((card, index) => {
           const isActive = card.id === activeCardId;
           const offset = index - activeIndex;
@@ -77,6 +77,7 @@ export function Collection() {
                 zIndex: isActive ? 10 : Math.max(1, 10 - Math.abs(offset)),
                 transform: isMobile ? `scale(${isActive ? 1.1 : 1 - Math.abs(offset) * 0.1})` : `translateY(${cardYOffset}px)`,
               }}
+              role="listitem"
             >
               <TradingCard
                 id={card.id}

@@ -80,4 +80,8 @@
   .card-inner {
     transition: transform 300ms ease;
   }
+  
+  .card {
+    transition: none;
+  }
 }

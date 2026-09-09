@@ -36,12 +36,13 @@ export function CollectionControls() {
   };
 
   return (
-    <div className="flex items-center justify-center gap-4 py-6 md:py-8">
+    <div className="flex items-center justify-center gap-4 py-6 md:py-8" role="navigation" aria-label="Card collection navigation">
       <button
         onClick={handlePrevious}
         disabled={activeIndex === 0}
-        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
+        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
         aria-label="Previous card"
+        tabIndex={0}
       >
         <ChevronLeft size={isMobile ? 20 : 24} />
       </button>
@@ -51,8 +52,9 @@ export function CollectionControls() {
       <button
         onClick={handleNext}
         disabled={activeIndex === allCards.length - 1}
-        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
+        className={`rounded-full bg-forest text-white flex items-center justify-center hover:bg-green transition-colors disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest ${isMobile ? 'w-10 h-10' : 'w-12 h-12'}`}
         aria-label="Next card"
+        tabIndex={0}
       >
         <ChevronRight size={isMobile ? 20 : 24} />
       </button>

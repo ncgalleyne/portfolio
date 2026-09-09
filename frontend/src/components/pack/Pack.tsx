@@ -56,11 +56,12 @@ export function Pack() {
 
         <button
           onClick={openPack}
-          className="pack-open-button"
+          className="pack-open-button focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow"
           style={{
             padding: isMobile ? '12px 24px' : '16px 32px',
             fontSize: isMobile ? '14px' : '18px',
           }}
+          aria-label="Open card pack"
         >
           OPEN PACK
         </button>
