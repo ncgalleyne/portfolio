@@ -28,9 +28,6 @@ export function Pack() {
         <div className="wax-pack-shimmer foil-shimmer" />
 
         <div className="relative z-10 space-y-1 text-center">
-          <div className="inline-block bg-vintage-red text-parchment-light text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded shadow">
-            1st Edition &bull; Special Issue
-          </div>
           <p className="text-[11px] font-mono text-vintage-gold tracking-widest uppercase">
             All-Star Developer Series
           </p>
@@ -38,7 +35,7 @@ export function Pack() {
 
         <div className="relative z-10 my-6 flex flex-col items-center">
           <div className="wax-pack-badge">
-            <span className="wax-pack-badge-number">94</span>
+            <span className="wax-pack-badge-number">98</span>
             <span className="wax-pack-badge-label">KICKOFF</span>
             <div className="wax-pack-badge-chip">TECH DEVS</div>
           </div>
@@ -47,11 +44,7 @@ export function Pack() {
             {displayName}
           </h2>
           <p className="font-editorial italic text-xs text-vintage-gold tracking-wide mt-1">
-            {displayTitle} &bull; Silicon Valley United
-          </p>
-          <div className="w-44 h-0.5 bg-vintage-gold/40 my-3" />
-          <p className="text-[10px] font-mono text-parchment-dark max-w-60 text-center leading-relaxed">
-            CONTAINS {cards.length} PREMIUM ENCRYPTED CARDS: PROFILE, PROJECTS &amp; CAREER RECORD.
+            {displayTitle} &bull; Major League Hacking
           </p>
         </div>
 

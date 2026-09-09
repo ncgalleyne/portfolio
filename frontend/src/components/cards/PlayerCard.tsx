@@ -38,6 +38,9 @@ export function PlayerCard() {
           <p className="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">
             {profile.location}
           </p>
+          <p className="text-[9px] font-mono uppercase tracking-widest text-parchment-dark">
+            College: {profile.education[0].institution}
+          </p>
         </div>
         <span className="text-xs font-bold text-parchment-light font-mono">
           5+ YRS

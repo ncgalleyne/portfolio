@@ -19,13 +19,12 @@ export function AwardsCard() {
   const certifications = profile.certifications || [];
 
   return (
-    <div className="h-full flex flex-col justify-between overflow-hidden">
+    <div className="h-full flex flex-col gap-5">
       {/* Header Badge & Card Metadata */}
       <div className="flex items-start justify-between border-b-2 border-pitch/30 pb-2">
-        <div>
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#245e45] font-bold">ROSTER RECORD · #05</span>
-          <h3 className="text-xl font-black tracking-tight text-pitch uppercase font-serif">CAREER MILESTONES</h3>
-        </div>
+        <span className="font-header text-lg text-pitch tracking-wider leading-none">
+          CAREER MILESTONES
+        </span>
         <span className="px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider bg-pitch text-vintage-gold rounded uppercase">ALL-TIME</span>
       </div>
 
@@ -34,7 +33,7 @@ export function AwardsCard() {
         <div className="relative pl-6 border-l-2 border-pitch/40 space-y-5">
           {experience.map((exp, i) => (
             <div key={`${exp.company}-${i}`} className="relative">
-              <div className={`absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full border-2 border-[#fbf8ee] ring-2 ${
+              <div className={`absolute -left-7.75 top-1 w-3.5 h-3.5 rounded-full border-2 border-[#fbf8ee] ring-2 ${
                 i === 0 ? 'bg-pitch ring-pitch' :
                 i === 1 ? 'bg-[#3d7059] ring-[#3d7059]' :
                 'bg-[#6a8779] ring-[#6a8779]'
@@ -80,20 +79,6 @@ export function AwardsCard() {
           ))}
         </ul>
       </div>
-
-      {/* Bottom Georgetown Alma Mater Bar */}
-      {education && (
-        <div className="pt-2 border-t border-pitch/20 flex items-center justify-between text-[11px] font-mono">
-          <div>
-            <span className="text-[#5a6e63] block text-[9px] uppercase">ALMA MATER</span>
-            <span className="font-bold text-pitch">{education.institution}</span>
-          </div>
-          <div className="text-right">
-            <span className="text-[#5a6e63] block text-[9px] uppercase">DEGREE</span>
-            <span className="font-bold text-pitch">{education.degree} {education.fieldOfStudy}</span>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -113,13 +98,13 @@ export function AwardsCardBack() {
           </span>
         </div>
         <p className="text-[10px] text-pitch/70 font-mono mt-0.5">
-          STATUS: PRINCIPAL / LEAD ROLES
+          STATUS: MID / SENIOR LEVEL ROLES
         </p>
       </div>
 
       <div className="my-2 space-y-2 text-xs leading-relaxed text-pitch-dark">
         <p className="font-bold text-pitch">
-          Currently open to select Advisory, Principal Engineering, or Technical Lead opportunities.
+          Currently open to select Full-Stack, Senior Software Engineer, or Frontend Developer opportunities.
         </p>
         <p className="text-[11px]">
           Seeking high-impact teams tackling ambitious distributed interfaces, next-generation AI
