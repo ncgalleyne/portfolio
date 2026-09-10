@@ -88,22 +88,6 @@ export function PlayerCardBack() {
         <p className="text-[11px]">{profile.about}</p>
       </div>
 
-      <div className="bg-parchment-dark p-2.5 rounded border border-pitch/30">
-        <h4 className="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider mb-1.5">
-          TACTICAL TOOLKIT
-        </h4>
-        <div className="flex flex-wrap gap-1">
-          {profile.skills.map((skill) => (
-            <span
-              key={skill}
-              className="text-[10px] bg-parchment-light text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className="pt-2 border-t border-pitch/20 space-y-1.5">
         <div className="grid grid-cols-3 gap-1 text-center">
           <a

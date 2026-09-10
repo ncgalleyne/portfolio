@@ -106,10 +106,6 @@ export function AwardsCardBack() {
         <p className="font-bold text-pitch">
           Currently open to Senior Level Full-Stack, Software Engineer, or Frontend Developer opportunities.
         </p>
-        <p className="text-[11px]">
-          Seeking high-impact teams tackling ambitious distributed interfaces, next-generation AI
-          developer tools, and creative technology.
-        </p>
         <div className="bg-parchment-dark p-2.5 rounded border border-pitch/30">
           <div className="text-[10px] font-bold text-pitch font-mono">
             DIRECT SCOUTING HOTLINE:
@@ -117,6 +113,22 @@ export function AwardsCardBack() {
           <div className="text-xs font-mono select-all text-vintage-red mt-0.5">
             {profile.links.email}
           </div>
+        </div>
+      </div>
+
+      <div className="bg-parchment-dark p-2.5 rounded border border-pitch/30">
+        <h4 className="text-[10px] font-bold text-pitch font-mono uppercase tracking-wider mb-1.5">
+          TACTICAL TOOLKIT
+        </h4>
+        <div className="flex flex-wrap gap-1">
+          {profile.skills.map((skill) => (
+            <span
+              key={skill}
+              className="text-[10px] bg-parchment-light text-pitch border border-pitch/40 px-1.5 py-0.5 rounded font-mono"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
 
